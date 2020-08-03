@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SPARTAN BMKG</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- Development version -->
+    <!-- <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script> -->
+
+    <!-- Production version -->
+    <!-- <script src="https://unpkg.com/@popperjs/core@2"></script> -->
+
+    <!-- <script src="js/leaflet.js"></script>
+    <link rel="stylesheet" href="css/leaflet.css"> -->
+    <!-- <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' /> -->
+    <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <script src="js/jquery-3.4.1.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+
+    <style>
+        .dropbtn {
+            background-color: rgb(13, 17, 47);
+            color: rgb(250, 246, 246);
+            width: 450px;
+            height: 30px;
+            /* padding: 20px; */
+            font-size: 13px;
+            border: none;
+
+        }
+
+        .dropbtn:hover,
+        .dropbtn:focus {
+            background-color: #464746;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: show;
+            position: center;
+            background-color: rgb(218, 246, 94);
+            width: 450px;
+            height: 40px;
+            cursor: pointer;
+            overflow: auto;
+            font-size: 15px;
+            font-weight: bold;
+            /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 9px;
+            text-decoration: none;
+            text-align: center;
+            font-style: normal;
+            display: block;
+
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+        .show {
+            display: block;
+        }
+
+        #map {
+            /* width: 894px; */
+            width: 1350px;
+            height: 470px;
+            top: 90px;
+
+        }
+
+        .legenda-left {
+            margin: 10px;
+            padding: 10px;
+
+        }
+
+        .wrap {
+            width: 100%;
+            border: solid 0px;
+            color: rgb(36, 37, 37);
+            margin: 0 auto;
+        }
+
+        .header {
+            background: rgba(5, 5, 5, 0.151);
+            border-bottom: solid 10px; 
+            padding: 1px 0;
+            width: 1350px;
+            height: 90px;
+            position:fixed;
+            z-index: 1500;
+        }
+
+        .body-content {
+            height: 1380px;
+            width: 1350px;
+            background: rgb(74, 74, 75);
+
+        }
+
+        .body-content .sidebar {
+            background: rgb(0, 59, 87);
+            float: right;
+            width: 453px;
+            height: 600px;
+
+        }
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
+        }
+
+        .body-content #mapid {
+            float: left;
+            height: 100%;
+            width: 100%;
+
+        }
+
+        .keterangan {
+            background: rgb(234, 235, 235);
+            padding: 5px 0;
+            width: 890px;
+            height: 600px;
+
+        }
+
+        .footer {
+            background: rgb(17, 17, 17);
+            border-top: solid 1px;
+            padding: 1px 0;
+            height: 100px;
+            width: 1350px;
+        }
+
+        /* .text-header {
+            margin: 10px 0;
+            padding: 10px;
+            text-align: center;
+            color: rgb(46, 46, 46);
+        } */
+
+
+        /* .text-body-content {
+            margin: 20px 0;
+            padding: 10px;
+            text-align: center;
+            color: rgb(218, 138, 19);
+
+        } */
+
+        .text-grafik {
+            margin: 0px 0;
+            padding: 0px;
+            text-align: center;
+            color: rgb(233, 232, 232);
+        }
+
+
+        .text-footer {
+            margin: 0;
+            padding: 10px;
+            color: rgb(6, 109, 141);
+
+
+        }
+
+        .text-keterangan {
+            margin: 0px 0;
+            padding: 0px;
+            text-align: center;
+            color: rgb(36, 35, 35);
+        }
+
+        .text-slider {
+            margin: auto;
+            padding-top: 15px;
+            text-align: center;
+            font-size: 15px;
+            color: rgb(253, 253, 253);
+        }
+
+        .text-tanggal {
+            margin-left: 0px;
+            letter-spacing: 2px;
+            word-spacing: 40px;
+            padding: 0px;
+            font-size: 10px;
+            text-align: center;
+            color: rgb(253, 253, 253);
+        }
+
+
+        .button {
+            background-color: rgb(50, 51, 50);
+            color: rgb(252, 249, 249);
+            border: none;
+            padding: 2px 54px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            position: relative;
+            top: 10px;
+            left: 45px;
+            display: block;
+
+        }
+
+
+        .button:hover,
+        .button:focus {
+            background-color: rgb(7, 140, 163)
+
+        }
+
+
+        /* .legend {
+            line-height: 18px;
+            color: #555;
+        }
+
+        .legend i {
+            width: 18px;
+            height: 15px;
+            float: left;
+            margin-right: 8px;
+            opacity: 0.7;
+        } */
+
+
+
+        .info {
+            padding: 5px 6px;
+            font: 10px/16px Arial, Helvetica, sans-serif;
+            background: rgba(250, 249, 249, 0.8);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            opacity: 80%;
+        }
+
+        .auto {
+            display: block;
+            /* border: 5px solid rgb(92, 91, 91); */
+            padding: 0px;
+            margin-top: auto;
+            width: 452px;
+            height: 525px;
+            overflow: auto;
+        }
+
+        .container {
+            padding-top: 80px;
+            margin-left: 0;
+            margin-right: 0;
+            max-width: 1350px;
+            background-color:rgb(73, 72, 72)
+            
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width:720px;
+            height: 7px;
+            border-radius: 5px;
+            background: #b6cbd3;
+            outline: none;
+            opacity: 100;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+           
+
+
+        }
+
+        .garis_bawah {
+            width: 1350px;
+            height: 5px;
+            border-radius: 0px;
+            background: #080808;
+            margin-left: 0px;
+            margin-bottom: 0px;
+            margin-top: auto;
+
+
+        }
+
+       
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            border-radius: 70%;
+            background: rgb(9, 153, 214);
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: rgb(7, 93, 231);
+            cursor: pointer;
+        }
+
+
+
+        .imageslider {
+            width: 800px;
+            height: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+        }
+
+        .imagefdrs {
+
+            opacity: 0.2;
+
+        }
+
+
+        /*loader*/
+        .loader,
+        .loader:before,
+        .loader:after {
+            background: #ffffff;
+            -webkit-animation: load1 1s infinite ease-in-out;
+            animation: load1 1s infinite ease-in-out;
+            width: 1em;
+            height: 3em;
+        }
+
+        .loader:before,
+        .loader:after {
+            position: absolute;
+            top: 0;
+            content: '';
+        }
+
+        .loader:before {
+            left: -1.5em;
+            -webkit-animation-delay: -0.32s;
+            animation-delay: -0.32s;
+        }
+
+        .loader {
+            text-indent: -9999em;
+            margin: 40px auto;
+            position: relative;
+            font-size: 10px;
+            -webkit-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-animation-delay: -0.16s;
+            animation-delay: -0.16s;
+        }
+
+        .loader:after {
+            left: 1.5em;
+        }
+
+        @-webkit-keyframes load1 {
+
+            0%,
+            80%,
+            100% {
+                box-shadow: 0 0 #ffffff;
+                height: 4em;
+            }
+
+            40% {
+                box-shadow: 0 -2em #ffffff;
+                height: 5em;
+            }
+        }
+
+        @keyframes load1 {
+
+            0%,
+            80%,
+            100% {
+                box-shadow: 0 0 #ffffff;
+                height: 4em;
+            }
+
+            40% {
+                box-shadow: 0 -2em #ffffff;
+                height: 5em;
+            }
+        }
+
+        /*akhir loader*/
+    </style>
+</head>
+
+<!-- ================================================== ISI LAMAN ========================================================= -->
+<!-- ================================================== ISI LAMAN ========================================================= -->
+<body class>
+    <div class="wrap">
+        <div class="header">
+
+            <img alt="SPARTAN" src="img/header_fdrs_SPARTAN10.png" height="80" width="1348" />
+
+        </div>
+
+        <div class="body-content">
+            
+            <div id="map">
+                
+            </div>
+            <div class="container">
+                <div class="loader">Loading...</div>
+                
+                
+                <div class="slidecontainer">
+                    <p class="text-slider"> <b>Prakiraan Index FDRS H+ : <span id="demo"> </span></b>  </p>
+                    <input onchange='setImage(this)' type="range" min="0" max="7" value="0" step="1" id="myRange"
+                    class="slider" />
+                    <img id='garis_slider' src='img/GARIS_SLIDER7.png' class="imageslider" />
+                    <!-- <input type="range" min="0" max="7" value="1" class="slider" id="myRange">
+                    <p class="text-keterangan"> Prakiraan H+ : <span id="demo"> </span></p> -->
+                    <p class="text-tanggal"> 
+                        <span id="Date00"> </span>
+                        <span id="Date01"> </span>
+                        <span id="Date02"> </span>
+                        <span id="Date03"> </span>
+                        <span id="Date04"> </span>
+                        <span id="Date05"> </span>
+                        <span id="Date06"> </span>
+                        <span id="Date07"> </span>
+                    </p>
+                   
+                            </div>
+            </div>
+            <hr class="garis_bawah">
+            <div class="sidebar">
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">GRAFIK INDEX FDRS</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a class="FFMC">Fine Fuel Moisture Code</a>
+                        <a class="DMC">Drought Moisture Code</a>
+                        <a class="DC">Drought Code</a>
+                        <a class="FWI">Fire Weather Index</a>
+                        <a class="BUI">Build Up Index </a>
+                        <a class="ISI">Intial Spread Index</a>
+                    </div>
+
+                </div>
+                <div class="auto">
+
+
+                    <br>
+                    <img id="change-image1" src="img/Bengkalis_RIAU_FFMC-graph.png" alt="FFMC_image" height="250"
+                        width="400" class="center" />
+                    <p class="text-grafik"><b>Provinsi Riau (Kab. Bengkalis)</b></p>
+                    <br>
+
+                    <img id="change-image2" src="img/Tebo_JAMBI_FFMC-graph.png" alt="FFMC_image" height="250"
+                        width="400" class="center" />
+                    <p class="text-grafik"><b>Provinsi Jambi (Kab. Tebo)</b></p>
+
+                    <br>
+
+                    <img id="change-image3" src="img/OKI_SUMSEL_FFMC-graph.png" alt="FFMC_image" height="250"
+                        width="400" class="center" />
+                    <p class="text-grafik"><b>Provinsi Sumsel (Kab. OKI)</b></p>
+                </div>
+            </div>
+
+            <div class="keterangan">
+
+                <br>
+                <h6 class="text-keterangan"><b>KETERANGAN INDEX FIRE DANGER RATING SYSTEM</b></h6>
+                <p class="text-keterangan">Penjelasan singkat tentang warna pada tingkatan disetiap index FDRS
+                    (FFMC, DMC, DC, FWI, BUI, ISI)</p>
+
+                <div class="btn-group btn-group-justified">
+                    <button onclick="myFunction()" class="button"><a class="KET_FFMC">FFMC</a></button>
+                    <button onclick="myFunction()" class="button"><a class="KET_DMC">DMC</a></button>
+                    <button onclick="myFunction()" class="button"><a class="KET_DC">DC</a></button>
+                    <button onclick="myFunction()" class="button"><a class="KET_FWI">FWI</a></button>
+                    <button onclick="myFunction()" class="button"><a class="KET_BUI">BUI</a></button>
+                    <button onclick="myFunction()" class="button"><a class="KET_ISI">ISI</a></button>
+                </div>
+                <br>
+                <br>
+                <img id="change-imageKET" src="img/KET_FFMC.png" alt="FFMC_image" height="450" width="930"
+                    class="center" />
+                <img id='img_ffmc' src='img/ECMWF/39_asia_transparan_ffmc_00.png' height="0" width="0" class="imagefdrs" />
+                <img id='img_fwi' src='img/ECMWF/39_asia_transparan_fwi_00.png' height="0" width="0" class="imagefdrs" />
+                <img id='img_bui' src='img/ECMWF/39_asia_transparan_bui_00.png' height="0" width="0" class="imagefdrs" />
+                <img id='img_isi' src='img/ECMWF/39_asia_transparan_isi_00.png' height="0" width="0" class="imagefdrs" />
+                <img id='img_dmc' src='img/ECMWF/39_asia_transparan_dmc_00.png' height="0" width="0" class="imagefdrs" />
+                <img id='img_dc' src='img/ECMWF/39_asia_transparan_fwi_00.png' height="0" width="0" class="imagefdrs" />
+                <img id='img_rain' src='img/rain_fdrs.png' height="0" width="0" class="imagefdrs" />
+            </div>
+
+            <div class="footer">
+                <p class="text-footer">&copy; Copyright Sub Bidang Peringatan Dini Cuaca. <img alt="Sipendekar"
+                        src="img/LOGO_PDC_2.png" height="30" width="30" /></p>
+
+            </div>
+
+            <!--===================================================== SCRIPT ==================================================================  -->
+            <!--================================================= PETA INTERACTIVE ============================================================  -->
+
+            <script>
+                var months = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+                var myDays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];
+                var date = new Date();
+                var day = date.getDate()
+                var month = date.getMonth();
+                var thisDay = date.getDay(),
+                    thisDay = myDays[thisDay];
+                var yy = date.getYear();
+                var year = (yy < 1000) ? yy + 1900 : yy;
+                // document.getElementById('Tanggal').innerHTML=thisDay + ', ' + day + ' ' + months[month] + ' ' + year;
+                // document.getElementById('Tanggal').innerHTML= day + ' ' + months[month] + ' ' + year;
+
+                var imgffmc = document.getElementById('img_ffmc');
+                var imgfwi = document.getElementById('img_fwi');
+                var imgisi = document.getElementById('img_isi');
+                var imgbui = document.getElementById('img_bui');
+                var imgdmc = document.getElementById('img_dmc');
+                var imgdc = document.getElementById('img_dc');
+                var slider = document.getElementById("myRange");
+                var output = document.getElementById("demo");
+                var date00 = document.getElementById("Date00")
+                date00.innerHTML = day + "/" + months[month] + "/" + year;
+
+                var date01 = document.getElementById("Date01")
+                date01.innerHTML = day + 1 + "/" + months[month] + "/" + year;
+
+                var date02 = document.getElementById("Date02")
+                date02.innerHTML = day + 2 + "/" + months[month] + "/" + year;
+
+                var date03 = document.getElementById("Date03")
+                date03.innerHTML = day + 3 + "/" + months[month] + "/" + year;
+
+                var date04 = document.getElementById("Date04")
+                date04.innerHTML = day + 4 +"/" + months[month] + "/" + year;
+
+                var date05 = document.getElementById("Date05")
+                date05.innerHTML = day + 5 + "/" + months[month] + "/" + year;
+
+                var date06 = document.getElementById("Date06")
+                date06.innerHTML = day + 6 +"/" + months[month] + "/" + year;
+
+                var date07 = document.getElementById("Date07")
+                date07.innerHTML = day + 7 + "/" + months[month] + "/" + year;
+
+
+
+
+                output.innerHTML = slider.value;
+                slider.oninput = function (e) {
+                    let value = parseInt(e.target.value);
+                    // if (value > 0) {
+                    //     date.innerHTML = day + value + " " + months[month] + " " + year;
+                    // }
+                   
+                    
+                    // else {
+                       
+                    // }
+
+                    output.innerHTML = this.value;
+                };
+                var img_array1 = ['img/ECMWF/39_asia_transparan_ffmc_00.png', 'img/ECMWF/39_asia_transparan_ffmc_01.png', 'img/ECMWF/39_asia_transparan_ffmc_02.png', 'img/ECMWF/39_asia_transparan_ffmc_03.png', 'img/ECMWF/39_asia_transparan_ffmc_04.png', 'img/ECMWF/39_asia_transparan_ffmc_05.png', 'img/ECMWF/39_asia_transparan_ffmc_06.png', 'img/ECMWF/39_asia_transparan_ffmc_07.png'];
+                var img_array2 = ['img/ECMWF/39_asia_transparan_fwi_00.png', 'img/ECMWF/39_asia_transparan_fwi_01.png', 'img/ECMWF/39_asia_transparan_fwi_02.png', 'img/ECMWF/39_asia_transparan_fwi_03.png', 'img/ECMWF/39_asia_transparan_fwi_04.png', 'img/ECMWF/39_asia_transparan_fwi_05.png', 'img/ECMWF/39_asia_transparan_fwi_06.png', 'img/ECMWF/39_asia_transparan_fwi_07.png'];
+                var img_array3 = ['img/ECMWF/39_asia_transparan_bui_00.png', 'img/ECMWF/39_asia_transparan_bui_01.png', 'img/ECMWF/39_asia_transparan_bui_02.png', 'img/ECMWF/39_asia_transparan_bui_03.png', 'img/ECMWF/39_asia_transparan_bui_04.png', 'img/ECMWF/39_asia_transparan_bui_05.png', 'img/ECMWF/39_asia_transparan_bui_06.png', 'img/ECMWF/39_asia_transparan_bui_07.png'];
+                var img_array4 = ['img/ECMWF/39_asia_transparan_isi_00.png', 'img/ECMWF/39_asia_transparan_isi_01.png', 'img/ECMWF/39_asia_transparan_isi_02.png', 'img/ECMWF/39_asia_transparan_isi_03.png', 'img/ECMWF/39_asia_transparan_isi_04.png', 'img/ECMWF/39_asia_transparan_isi_05.png', 'img/ECMWF/39_asia_transparan_isi_06.png', 'img/ECMWF/39_asia_transparan_isi_07.png'];
+                var img_array5 = ['img/ECMWF/39_asia_transparan_dmc_00.png', 'img/ECMWF/39_asia_transparan_dmc_01.png', 'img/ECMWF/39_asia_transparan_dmc_02.png', 'img/ECMWF/39_asia_transparan_dmc_03.png', 'img/ECMWF/39_asia_transparan_dmc_04.png', 'img/ECMWF/39_asia_transparan_dmc_05.png', 'img/ECMWF/39_asia_transparan_dmc_06.png', 'img/ECMWF/39_asia_transparan_dmc_07.png'];
+                var img_array6 = ['img/ECMWF/39_asia_transparan_dc_00.png', 'img/ECMWF/39_asia_transparan_dc_01.png', 'img/ECMWF/39_asia_transparan_dc_02.png', 'img/ECMWF/39_asia_transparan_dc_03.png', 'img/ECMWF/39_asia_transparan_dc_04.png', 'img/ECMWF/39_asia_transparan_dc_05.png', 'img/ECMWF/39_asia_transparan_dc_06.png', 'img/ECMWF/39_asia_transparan_dc_07.png'];
+                                
+                function setImage(obj) {
+                    var value = obj.value;
+                    imgffmc.src = img_array1[value];
+                    imgfwi.src = img_array2[value];
+                    imgbui.src = img_array3[value];
+                    imgisi.src = img_array4[value];
+                    imgdmc.src = img_array5[value];
+                    imgdc.src = img_array6[value];
+                }
+
+            
+
+                // center of the map
+                var center = new L.latLng(8.5, 118.662089);
+                var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                    '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                    'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                    mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+
+                // Peta Grayscale 
+                var grayscale = L.tileLayer(mbUrl, { id: 'mapbox/light-v9', tileSize: 512, zoomOffset: -1, attribution: mbAttr }),
+                    streets = L.tileLayer(mbUrl, { id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mbAttr });
+                var map = L.map('map', {
+                    maxZoom: 15,
+                    minZoom: 4,
+                }).setView(center, 4);
+
+                // Peta OSM
+                var OSM = L.tileLayer(
+                    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: 'Data © <a href="http://osm.org/copyright">OpenStreetMap</a>',
+                    maxZoom: 15
+                })//.addTo(map);
+
+                // Peta MapBOX
+                var mapbox = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+                    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+                    maxZoom: 15,
+                    id: 'mapbox.streets',
+                    accessToken: 'pk.eyJ1IjoibWlrbzk2MDAxIiwiYSI6ImNrNmt4cmE1NjA3aHAza28xMnFvcmxrZTIifQ.Yi_7Z09QxAFr5uc1b3llaA'
+
+                });
+
+                // Membuat Label pada Layer dengan zIndex (400)
+                map.createPane('labels');
+                map.getPane('labels').style.zIndex = 400;
+                // Layers in this pane are non-interactive and do not obscure mouse/touch events
+                map.getPane('labels').style.pointerEvents = 'none';
+
+                var road = L.tileLayer('https://{s}.tiles.mapbox.com/v3/weatherdecisiontechnologies.g9a83pc2/{z}/{x}/{y}.png', {
+                    pane: 'labels'
+                })//.addTo(map);
+                var road_labels = L.tileLayer('https://{s}.tiles.mapbox.com/v3/weatherdecisiontechnologies.g9a8dn00/{z}/{x}/{y}.png', {
+                    pane: 'labels'
+                })//.addTo(map);
+                var terrain = L.tileLayer('https://{s}.tiles.mapbox.com/v3/weatherdecisiontechnologies.g7pcpdfj/{z}/{x}/{y}.png', {
+                    // pane: 'labels'
+                }).addTo(map);
+                var terrain_labels = L.tileLayer('https://{s}.tiles.mapbox.com/v3/weatherdecisiontechnologies.g7pd6353/{z}/{x}/{y}.png', {
+                    pane: 'labels'
+                });
+
+                //.addTo(map);
+
+
+
+                // var Palembang = L.marker([-2.960109, 104.756438]).bindPopup('Kota Palembang.'),
+                //     Pekanbaru = L.marker([0.497999, 101.445979]).bindPopup('Kota Pekanbaru.'),
+                //     Palangkaraya = L.marker([-0.001876, 109.384469]).bindPopup('Kota Palangkaraya'),
+                //     Pontianak = L.marker([-2.223390, 113.909505]).bindPopup('SUHU=35⁰C');
+                // var oke = L.layerGroup([Palembang],[Pekanbaru]).addTo(map)
+
+
+                // $.getJSON("data/hotspotNew.json", function (json1) {
+                // for (var i = 0; i < json1.length; i++) {
+                //     var place = json1[i];
+                //     // Creating a marker and putting it on the map
+                //     var customIcon = L.icon({
+                //         iconUrl: 'img/hotspot.png',
+                //         iconSize: [20, 20], // size of the icon
+                //         // iconAnchor: [0, 0], // point of the icon which will correspond to marker's location
+                //         // popupAnchor: [0, 0], // point from which the popup should open relative to the iconAnchor
+
+                //     });
+                //     var Coordinate = new L.latLng((place.Coordinate));
+                //     var marker = L.marker(place.Coordinate, { icon: customIcon }).addTo(map);
+                //    // marker.addTo(map).bindPopup(place.Kecamatan) + '</br>' + (place.Provinsi).openPopup() ;
+
+                //     marker.bindPopup("<b>Tgl/Bln/Thn: </b>"+ place.Tanggal + '</br>' + "<b>Provinsi : </b>" + place.Provinsi + '</br>' + "<b>Kecamatan : </b>" + place.Kecamatan + '</br>' + "<b>Kabupaten : </b>"+ place.Kabupaten + '</br>' + "<b>Waktu : </b>"+ place.Waktu );
+
+                // }
+                // });
+                //var geojsonLayer = new L.GeoJSON.AJAX("oke/Riau.json");       
+                // geojsonLayer.addTo(map);
+                // function getColor(d) {
+                //     return d > 82 ? '#F71907' :
+                //         d > 77 ? '#F7F307' :
+                //             d > 72 ? '#1DD533' :
+                //                 '#1D39D5';
+                // }
+                // var legend = L.control({ position: 'bottomleft' });
+
+                // legend.onAdd = function (map) {
+
+                //     var div = L.DomUtil.create('div', 'info legend'),
+                //         grades = [0, 72, 77, 82],
+                //         labels = ["Index FFMC : "];
+
+                //     // loop through our density intervals and generate a label with a colored square for each interval
+                //     for (var i = 0; i < grades.length; i++) {
+                //         from = grades[i];
+                //         to = grades[i + 1];
+
+                //         labels.push(
+                //             '<i style="background:' + getColor(from + 1) + '"></i> ' +
+                //             from + (to ? '&ndash;' + to : '+'));
+                //     }
+
+                //     div.innerHTML = labels.join('<br>');
+                //     return div;
+                // };
+                //legend.addTo(map);
+
+
+                // ==================================================================== LEGENDA ======================================================//
+                //MEMBUAT LEGENDA
+
+                // var legend = L.control({ position: 'bottomleft' });
+
+                // legend.onAdd = function (map) {
+
+                //     var div = L.DomUtil.create('div', 'info legend'),
+                //         grades = ["<b> Index FDRS : </b>"],
+                //         labels = ['img/legenda_fdrs_oke.png'];
+
+                //     // loop through our density intervals and generate a label with a colored square for each interval
+                //     for (var i = 0; i < grades.length; i++) {
+                //         div.innerHTML +=
+                //             grades[i] + (" <img src=" + labels[i] + " height='17' width='220'>") + '<br>';
+                //     }
+
+                //     return div;
+                // };
+
+                var legend = L.control({ position: 'bottomleft' });
+
+                legend.onAdd = function (map) {
+
+                    var div = L.DomUtil.create('div', 'info legend'),
+                        grades = ["<b>Titik Hotspot (Sumber:LAPAN) </b>"],
+                        labels = ['img/Hotspot8.png'];
+
+                    // loop through our density intervals and generate a label with a colored square for each interval
+                    for (var j = 0; j < grades.length; j++) {
+                        div.innerHTML +=
+                            grades[j] + '<br>' + (" <img src=" + labels[j] + " height='45' width='138'>");
+                    }
+
+                    return div;
+                };
+
+                legend.addTo(map);
+                var legend = L.control({ position: 'bottomleft' });
+
+                legend.onAdd = function (map) {
+
+                    var div = L.DomUtil.create('div', 'info legend'),
+                        grades = ["<b> FDRS</b>"],
+                        labels = ['img/FDRS_NEW_8.png'];
+
+                    // loop through our density intervals and generate a label with a colored square for each interval
+                    for (var i = 0; i < grades.length; i++) {
+                        div.innerHTML +=
+                            ("<img src=" + labels[i] + " height='290' width='20'>" + '<br>');
+                    }
+
+                    return div;
+                };
+
+
+                legend.addTo(map);
+
+
+
+                var legend = L.control({ position: "topright" });
+
+                legend.onAdd = function (map) {
+
+                    var div = L.DomUtil.create('div', 'info legend'),
+                        grades = ["<b> Logo Spartan</b>"],
+                        labels = ['img/legenda_rain2.png'];
+
+                    // loop through our density intervals and generate a label with a colored square for each interval
+                    for (var i = 0; i < grades.length; i++) {
+                        div.innerHTML +=
+                            ("<img src=" + labels[i] + " height='30' width='270'>");
+                    }
+
+                    return div;
+                };
+                legend.addTo(map);
+
+
+                // var legend = L.control({ position: "topright" });
+
+                // legend.onAdd = function (map) {
+
+                //     var div = L.DomUtil.create('div', 'info legend'),
+                //         label  = ["<b> Logo Spartan</b>"],
+                //         Kategori = ['img/LogoSPARTAN.png'];
+
+                //     // loop through our density intervals and generate a label with a colored square for each interval
+                //     for (var i = 0; i < label.length; i++) {
+                //         div.innerHTML +=
+                //             ("<img src=" + Kategori[i] + " height='45' width='40'>" + '<br>');
+                //     }
+
+                //     return div;
+                // };
+                // legend.addTo(map);
+
+
+                // <!--================================================== LAYER HOTSPOT =====================================================  -->
+
+                var jsonData = 'data/htsp.json';
+                function getJSONValue(fileJSON) {
+                    var value = $.ajax({
+                        url: fileJSON,
+                        async: false
+                    }).responseText;
+                    return value
+                }
+                hotspotData = getJSONValue(jsonData)
+                var hotspotDataJSON = JSON.parse(hotspotData)
+
+                // var jsondatafdrs = 'data/GSMAP_20200405_FIX_1.json';
+                // function getJSONValue(fileJSON) {
+                //     var value = $.ajax({
+                //         url: fileJSON,
+                //         async: false
+                //     }).responseText;
+                //     return value
+                // }
+                // datafdrs = getJSONValue(jsondatafdrs)
+                // var datafdrsJSON = JSON.parse(datafdrs)
+
+
+
+                // size of the icon
+                // iconAnchor: [0, 0], // point of the icon which will correspond to marker's location
+                // popupAnchor: [0, 0], // point from which the popup should open relative to the iconAnchor
+
+
+                var customIcon = L.icon({
+                    iconUrl: 'img/hotspot.png',
+                    iconSize: [0.1 , 0.1]
+                })
+
+                var customIcon_1 = L.icon({
+                    iconUrl: 'img/hotspot_30.png',
+                    iconSize: [20, 20]
+                }) // size of the icon
+
+
+                var customIcon_2 = L.icon({
+                    iconUrl: 'img/hotspot_40.png',
+                    iconSize: [20, 20]
+                }) // size of the icon     
+
+                var customIcon_3 = L.icon({
+                    iconUrl: 'img/hotspot_60.png',
+                    iconSize: [20, 20]
+                }) // size of the icon     
+
+
+
+                var hotspotLayerKurang30 = L.layerGroup()
+                var hotspotLayerKurang70 = L.layerGroup()
+                var hotspotLayerLebih70 = L.layerGroup()
+                // var PREC100 = L.layerGroup()
+
+
+
+
+//============================================================LAPAN===============================================================
+                for (i = 0; i < hotspotDataJSON.length; i++) {
+                    var kepercayaan = parseInt(hotspotDataJSON[i].Kepercayaan)
+                    var Coordinate = new L.latLng(([hotspotDataJSON[i].Lintang, hotspotDataJSON[i].Bujur]))
+                    var marker = L.marker(Coordinate, { icon: customIcon_1 })
+                    marker.bindPopup("<b>Thn/Bln/Tgl: </b>" + hotspotDataJSON[i].Tanggal + '</br>' + "<b>Provinsi : </b>" + hotspotDataJSON[i].Provinsi + '</br>' + "<b>Kecamatan : </b>" + hotspotDataJSON[i].Kecamatan + '</br>' + "<b>Kabupaten : </b>" + hotspotDataJSON[i].Kabupaten + '</br>' + "<b>Waktu : </b>" + hotspotDataJSON[i].Waktu + '</br>' + "<b>Satelit : </b>" + hotspotDataJSON[i].Satelit + '</br>' + "<b>Kepercayaan : RENDAH </b>");
+                    if (kepercayaan < 8) { hotspotLayerKurang30.addLayer(marker) }
+
+                    else { }
+                }
+
+                for (j = 0; j < hotspotDataJSON.length; j++) {
+                    var kepercayaan = parseInt(hotspotDataJSON[j].Kepercayaan)
+                    var Coordinate = new L.latLng(([hotspotDataJSON[j].Lintang, hotspotDataJSON[j].Bujur]))
+                    var marker = L.marker(Coordinate, { icon: customIcon_2 })
+                    marker.bindPopup("<b>Thn/Bln/Tgl: </b>" + hotspotDataJSON[j].Tanggal + '</br>' + "<b>Provinsi : </b>" + hotspotDataJSON[j].Provinsi + '</br>' + "<b>Kecamatan : </b>" + hotspotDataJSON[j].Kecamatan + '</br>' + "<b>Kabupaten : </b>" + hotspotDataJSON[j].Kabupaten + '</br>' + "<b>Waktu : </b>" + hotspotDataJSON[j].Waktu + '</br>' + "<b>Satelit : </b>" + hotspotDataJSON[j].Satelit + '</br>' + "<b>Kepercayaan : SEDANG </b>");
+                    if (kepercayaan > 7 && kepercayaan < 9) { hotspotLayerKurang70.addLayer(marker) }
+                    else { }
+                }
+
+
+                for (k = 0; k < hotspotDataJSON.length; k++) {
+                    var kepercayaan = parseInt(hotspotDataJSON[k].Kepercayaan)
+                    var Coordinate = new L.latLng(([hotspotDataJSON[k].Lintang, hotspotDataJSON[k].Bujur]))
+                    var marker = L.marker(Coordinate, { icon: customIcon_3 })
+                    marker.bindPopup("<b>Thn/Bln/Tgl: </b>" + hotspotDataJSON[k].Tanggal + '</br>' + "<b>Provinsi : </b>" + hotspotDataJSON[k].Provinsi + '</br>' + "<b>Kecamatan : </b>" + hotspotDataJSON[k].Kecamatan + '</br>' + "<b>Kabupaten : </b>" + hotspotDataJSON[k].Kabupaten + '</br>' + "<b>Waktu : </b>" + hotspotDataJSON[k].Waktu + '</br>' + "<b>Satelit : </b>" + hotspotDataJSON[k].Satelit + '</br>' + "<b>Kepercayaan : TINGGI </b>");
+                    if (kepercayaan > 8) { hotspotLayerLebih70.addLayer(marker).addTo(map);}
+                    else { }
+                }
+// ============================================================ASEAN===============================================================
+                // for (i = 0; i < hotspotDataJSON.length; i++) {
+                //     var kepercayaan = parseInt(hotspotDataJSON[i].Kepercayaan)
+                //     var Coordinate = new L.latLng(([hotspotDataJSON[i].Lintang, hotspotDataJSON[i].Bujur]))
+                //     var marker = L.marker(Coordinate, { icon: customIcon_1 })
+                //     marker.bindPopup("<b>Thn/Bln/Tgl: </b>" + hotspotDataJSON[i].Tanggal + '</br>' + "<b>Negara : </b>" + hotspotDataJSON[i].Negara + '</br>' + "<b>Waktu : </b>" + hotspotDataJSON[i].Waktu + '</br>' + "<b>Satelit : </b>" + hotspotDataJSON[i].Satelit + '</br>' + "<b>Kepercayaan : </b>" + hotspotDataJSON[i].Kepercayaan + "<b>%</b>");
+                //     if (kepercayaan < 30) { hotspotLayerKurang30.addLayer(marker) }
+
+                //     else { }
+                // }
+
+                // for (j = 0; j < hotspotDataJSON.length; j++) {
+                //     var kepercayaan = parseInt(hotspotDataJSON[j].Kepercayaan)
+                //     var Coordinate = new L.latLng(([hotspotDataJSON[j].Lintang, hotspotDataJSON[j].Bujur]))
+                //     var marker = L.marker(Coordinate, { icon: customIcon_2 })
+                //     marker.bindPopup("<b>Thn/Bln/Tgl: </b>" + hotspotDataJSON[j].Tanggal + '</br>' + "<b>Negara : </b>" + hotspotDataJSON[j].Negara + '</br>' +  "<b>Waktu : </b>" + hotspotDataJSON[j].Waktu + '</br>' + "<b>Satelit : </b>" + hotspotDataJSON[j].Satelit + '</br>' + "<b>Kepercayaan : </b>" + hotspotDataJSON[j].Kepercayaan + "<b>%</b>");
+                //     if (kepercayaan > 30 && kepercayaan < 70) { hotspotLayerKurang70.addLayer(marker) }
+                //     else { }
+                // }
+
+
+                // for (k = 0; k < hotspotDataJSON.length; k++) {
+                //     var kepercayaan = parseInt(hotspotDataJSON[k].Kepercayaan)
+                //     var Coordinate = new L.latLng(([hotspotDataJSON[k].Lintang, hotspotDataJSON[k].Bujur]))
+                //     var marker = L.marker(Coordinate, { icon: customIcon_3 })
+                //     marker.bindPopup("<b>Thn/Bln/Tgl: </b>" + hotspotDataJSON[k].Tanggal + '</br>' + "<b>Negara : </b>" + hotspotDataJSON[k].Negara + '</br>' + "<b>Waktu : </b>" + hotspotDataJSON[k].Waktu + '</br>' + "<b>Satelit : </b>" + hotspotDataJSON[k].Satelit + '</br>' + "<b>Kepercayaan : </b>" + hotspotDataJSON[k].Kepercayaan + "<b>%</b>");
+                //     if (kepercayaan > 70) { hotspotLayerLebih70.addLayer(marker) }
+                //     else { }
+                // }
+
+// ============================================================ NASA ===============================================================
+                // for (i = 0; i < hotspotDataJSON.length; i++) {
+                //     var kepercayaan = parseInt(hotspotDataJSON[i].confidence)
+                //     var Coordinate = new L.latLng(([hotspotDataJSON[i].lat, hotspotDataJSON[i].long]))
+                //     var marker = L.marker(Coordinate, { icon: customIcon_1 })
+                //     marker.bindPopup("<b>Thn/Bln/Tgl: </b>" + hotspotDataJSON[i].acq_date + '</br>' + "<b>Satelit : </b>" + hotspotDataJSON[i].satellite + '</br>' + "<b>Kepercayaan : </b>" + hotspotDataJSON[i].confidence + "<b>%</b>");
+                //     if (kepercayaan < 30) { hotspotLayerKurang30.addLayer(marker) }
+
+                //     else { }
+                // }
+
+                // for (j = 0; j < hotspotDataJSON.length; j++) {
+                //     var kepercayaan = parseInt(hotspotDataJSON[j].confidence)
+                //     var Coordinate = new L.latLng(([hotspotDataJSON[j].lat, hotspotDataJSON[j].long]))
+                //     var marker = L.marker(Coordinate, { icon: customIcon_2 })
+                //     marker.bindPopup("<b>Thn/Bln/Tgl: </b>" + hotspotDataJSON[j].acq_date + '</br>' + "<b>Satelit : </b>" + hotspotDataJSON[j].satellite + '</br>' + "<b>Kepercayaan : </b>" + hotspotDataJSON[j].confidence + "<b>%</b>");
+                //     if (kepercayaan > 30 && kepercayaan < 70) { hotspotLayerKurang70.addLayer(marker) }
+                //     else { }
+                // }
+
+
+                // for (k = 0; k < hotspotDataJSON.length; k++) {
+                //     var kepercayaan = parseInt(hotspotDataJSON[k].confidence)
+                //     var Coordinate = new L.latLng(([hotspotDataJSON[k].lat, hotspotDataJSON[k].long]))
+                //     var marker = L.marker(Coordinate, { icon: customIcon_3 })
+                //     marker.bindPopup("<b>Thn/Bln/Tgl: </b>" + hotspotDataJSON[k].acq_date + '</br>' + "<b>Satelit : </b>" + hotspotDataJSON[k].satellite + '</br>' + "<b>Kepercayaan : </b>" + hotspotDataJSON[k].confidence + "<b>%</b>");
+                //     if (kepercayaan > 70) { hotspotLayerLebih70.addLayer(marker) }
+                //     else { }
+                // }
+
+// ============================================================ASEAN===============================================================
+
+
+
+                // for (l = 0; l < datafdrsJSON.length; l++) {
+                //     var PREC = parseInt(datafdrsJSON[l].PREC)
+                //     var Coordinate = new L.latLng(([datafdrsJSON[l].lat, datafdrsJSON[l].lon]))
+                //     var marker = L.marker(Coordinate, { icon: customIcon })
+                //     marker.bindPopup("<b>FFMC: </b>" + datafdrsJSON[l].FFMC + '</br>' + "<b>ANGIN : </b>" + datafdrsJSON[l].WIND + "knt" + '</br>' + "<b>PREC : </b>" + datafdrsJSON[l].PREC + "mm" + '</br>' + "<b>SUHU: </b>" + datafdrsJSON[l].T + 'C');
+                //     if (PREC > 50) { PREC100.addLayer(marker)}
+                //     else { }
+                // }
+
+
+                // var jsonData1 = 'data/hotspot_fdrs_1.json';
+                // function getJSONValue(fileJSON) {
+                //     var value = $.ajax({
+                //         url: fileJSON,
+                //         async: false
+                //     }).responseText;
+                //     return value
+                // }
+                // hotspotData1 = getJSONValue(jsonData1)
+                // var hotspotDataJSON1 = JSON.parse(hotspotData1)
+                // // var customIcon = L.icon({
+                // //     iconUrl: 'img/hotspot.png',
+                // //     iconSize: [20, 20]
+                // //})
+
+                // for (l = 0; l < hotspotDataJSON1.length; l++) {
+                // var Coordinate1 = new L.latLng(([hotspotDataJSON1[l].lat, hotspotDataJSON1[l].lon]))
+                // var marker1 = L.marker(Coordinate1).addTo(map);
+                // //    // marker.addTo(map).bindPopup(place.Kecamatan) + '</br>' + (place.Provinsi).openPopup() ;
+
+                //  marker1.bindPopup("<b>FFMC: </b>"+ hotspotDataJSON1[l].FFMC + '</br>' + "<b>ANGIN : </b>" + hotspotDataJSON1[l].ANGIN + '</br>' + "<b>HUJAN : </b>" + hotspotDataJSON1[l].HUJAN)
+
+
+                // }
+
+
+                // <!--================================================== LAYER FDRS =====================================================  -->
+
+                var imageUrl_ffmc = document.getElementById("img_ffmc")
+                var imageBounds_ffmc = new L.LatLngBounds(
+                    new L.LatLng(-12.7, 91.2),
+                    new L.LatLng(28.0, 150)
+                )
+
+                var imageUrl_dmc = document.getElementById("img_dmc")
+                var imageBounds_dmc = new L.LatLngBounds(
+                    new L.LatLng(-12.7, 91.2),
+                    new L.LatLng(28.0, 150)
+                )
+
+                var imageUrl_dc = document.getElementById("img_dc")
+                var imageBounds_dc = new L.LatLngBounds(
+                    new L.LatLng(-12.7, 91.2),
+                    new L.LatLng(28.0, 150)
+                )
+                var imageUrl_fwi = document.getElementById("img_fwi")
+                var imageBounds_fwi = new L.LatLngBounds(
+                    new L.LatLng(-12.7, 91.2),
+                    new L.LatLng(28.0, 150)
+                )
+
+                var imageUrl_bui = document.getElementById("img_bui")
+                var imageBounds_bui = new L.LatLngBounds(
+                    new L.LatLng(-12.7, 91.2),
+                    new L.LatLng(28.0, 150)
+                )
+
+                var imageUrl_isi = document.getElementById("img_isi")
+                var imageBounds_isi = new L.LatLngBounds(
+                    new L.LatLng(-12.7, 91.2),
+                    new L.LatLng(28.0, 150)
+                )
+
+                var imageUrl_rain = document.getElementById("img_rain")
+                var imageBounds_rain = new L.LatLngBounds(
+                    new L.LatLng(-12.7, 91.2),
+                    new L.LatLng(28.0, 150)
+                )
+
+                var imageUrl_1 = 'img/KAB_RIAU.png';
+                var imageBounds_1 = new L.LatLngBounds(
+                    new L.LatLng(-11.35, 91.68),
+                    new L.LatLng(27.25, 148.15)
+                )
+
+                var LayerFDRS_ffmc = L.imageOverlay(imageUrl_ffmc, imageBounds_ffmc, { zindex: 900 })//.addTo(map);
+                var LayerFDRS_dmc = L.imageOverlay(imageUrl_dmc, imageBounds_dmc, { zindex: 900 })//.addTo(map);
+                var LayerFDRS_dc = L.imageOverlay(imageUrl_dc, imageBounds_dc, { zindex: 900 })//.addTo(map);
+                var LayerFDRS_fwi = L.imageOverlay(imageUrl_fwi, imageBounds_fwi, { zindex: 900 })//.addTo(map);
+                var LayerFDRS_bui = L.imageOverlay(imageUrl_bui, imageBounds_bui, { zindex: 900 })//.addTo(map);
+                var LayerFDRS_isi = L.imageOverlay(imageUrl_isi, imageBounds_isi, { zindex: 900 })//.addTo(map);
+                // var LayerFDRS_rain = L.imageOverlay(imageUrl_rain, imageBounds_rain, { zindex: 900 })//.addTo(map);
+                // var LayerKAB_RIAU = L.imageOverlay(imageUrl_1, imageBounds_1, { zindex: 900 })//.addTo(map);
+            
+
+                // <!--======================================================== LAYER CONTROL =====================================================  -->
+
+                var baseLayers = {
+                    "Terrain": terrain,
+                    "Gray scale": grayscale,
+                    "OSM": OSM,
+                    // "mapBox": mapbox
+                };
+
+                var overlays = {
+                    "Nama Wilayah": terrain_labels,
+                    // "Provinsi Riau": LayerKAB_RIAU,
+
+                    "FFMC": LayerFDRS_ffmc,
+                    "DMC": LayerFDRS_dmc,
+                    "DC": LayerFDRS_dc,
+                    "FWI": LayerFDRS_fwi,
+                    "BUI": LayerFDRS_bui,
+                    "ISI": LayerFDRS_isi,
+                    // "PREC": LayerFDRS_rain,
+
+                    "<img src='img/hs_rendah.png'/> <span class='my-layer-item'>0-29%</span>": hotspotLayerKurang30,
+                    "<img src='img/hs_sedang.png'/> <span class='my-layer-item'>30-79%</span>": hotspotLayerKurang70,
+                    "<img src='img/hs_tinggi.png'/> <span class='my-layer-item'>80-100%</span>": hotspotLayerLebih70,
+                    // "PREC100": PREC100,
+                   
+
+                };
+
+
+                L.control.layers(baseLayers, overlays).addTo(map);
+                
+                
+                // <!--================================================== CHANGE IMAGE GRAFIK =====================================================  -->
+
+                jQuery(document).ready(function ($) {
+
+
+                    // * PROVINSI RIAU GRAFIK :: 
+
+                    $('.FFMC').on({
+                        'click': function () {
+                            $('#change-image1').attr('src', 'img/Bengkalis_RIAU_FFMC-graph.png');
+                        }
+                    });
+
+                    $('.DMC').on({
+                        'click': function () {
+                            $('#change-image1').attr('src', 'img/Bengkalis_RIAU_DMC-graph.png');
+                        }
+                    });
+
+                    $('.DC').on({
+                        'click': function () {
+                            $('#change-image1').attr('src', 'img/Bengkalis_RIAU_DC-graph.png');
+                        }
+                    });
+
+                    $('.FWI').on({
+                        'click': function () {
+                            $('#change-image1').attr('src', 'img/Bengkalis_RIAU_FWI-graph.png');
+                        }
+                    });
+
+                    $('.BUI').on({
+                        'click': function () {
+                            $('#change-image1').attr('src', 'img/Bengkalis_RIAU_BUI-graph.png');
+                        }
+                    });
+
+                    $('.ISI').on({
+                        'click': function () {
+                            $('#change-image1').attr('src', 'img/Bengkalis_RIAU_ISI-graph.png');
+                        }
+                    });
+
+                    // * PROVINSI JAMBI GRAFIK :: 
+
+                    $('.FFMC').on({
+                        'click': function () {
+                            $('#change-image2').attr('src', 'img/Tebo_JAMBI_FFMC-graph.png');
+                        }
+                    });
+
+                    $('.DMC').on({
+                        'click': function () {
+                            $('#change-image2').attr('src', 'img/Tebo_JAMBI_DMC-graph.png');
+                        }
+                    });
+
+                    $('.DC').on({
+                        'click': function () {
+                            $('#change-image2').attr('src', 'img/Tebo_JAMBI_DC-graph.png');
+                        }
+                    });
+
+                    $('.FWI').on({
+                        'click': function () {
+                            $('#change-image2').attr('src', 'img/Tebo_JAMBI_FWI-graph.png');
+                        }
+                    });
+
+                    $('.BUI').on({
+                        'click': function () {
+                            $('#change-image2').attr('src', 'img/Tebo_JAMBI_BUI-graph.png');
+                        }
+                    });
+
+                    $('.ISI').on({
+                        'click': function () {
+                            $('#change-image2').attr('src', 'img/Tebo_JAMBI_ISI-graph.png');
+                        }
+                    });
+
+
+                    // * PROVINSI SUMSEL GRAFIK :: 
+
+                    $('.FFMC').on({
+                        'click': function () {
+                            $('#change-image3').attr('src', 'img/OKI_SUMSEL_FFMC-graph.png');
+                        }
+                    });
+
+                    $('.DMC').on({
+                        'click': function () {
+                            $('#change-image3').attr('src', 'img/OKI_SUMSEL_DMC-graph.png');
+                        }
+                    });
+
+                    $('.DC').on({
+                        'click': function () {
+                            $('#change-image3').attr('src', 'img/OKI_SUMSEL_DC-graph.png');
+                        }
+                    });
+
+                    $('.FWI').on({
+                        'click': function () {
+                            $('#change-image3').attr('src', 'img/OKI_SUMSEL_FWI-graph.png');
+                        }
+                    });
+
+                    $('.BUI').on({
+                        'click': function () {
+                            $('#change-image3').attr('src', 'img/OKI_SUMSEL_BUI-graph.png');
+                        }
+                    });
+
+                    $('.ISI').on({
+                        'click': function () {
+                            $('#change-image3').attr('src', 'img/OKI_SUMSEL_ISI-graph.png');
+                        }
+                    });
+
+                    $('.KET_FFMC').on({
+                        'click': function () {
+                            $('#change-imageKET').attr('src', 'img/KET_FFMC.png');
+                        }
+                    });
+
+                    $('.KET_DMC').on({
+                        'click': function () {
+                            $('#change-imageKET').attr('src', 'img/ket_dmc_1.png');
+
+                        }
+                    });
+
+
+                    $('.KET_DC').on({
+                        'click': function () {
+                            $('#change-imageKET').attr('src', 'img/ket_dc_1.png');
+                        }
+                    });
+
+                    $('.KET_FWI').on({
+                        'click': function () {
+                            $('#change-imageKET').attr('src', 'img/ket_fwi_1.png');
+                        }
+                    });
+
+
+                    $('.KET_BUI').on({
+                        'click': function () {
+                            $('#change-imageKET').attr('src', 'img/ket_bui_1.png');
+                        }
+                    });
+
+
+
+                    $('.KET_ISI').on({
+                        'click': function () {
+                            $('#change-imageKET').attr('src', 'img/ket_isi_1.png');
+                        }
+                    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    setTimeout(function () {
+                        $('.loader').css('display', 'none');
+                    }, 2000); // it will remove after 5 seconds
+
+
+                    // ======================================== IMAGE SHOW ON/OFF =========================================================//
+
+
+                    // var slider = document.getElementById("myRange");
+                    // var output = document.getElementById("demo");
+                    // output.innerHTML = slider.value;
+
+                    // slider.oninput = function () {
+                    //     output.innerHTML = this.value;
+                    // }
+
+
+                });
+
+
+            </script>
+</body>
+
+</html>
