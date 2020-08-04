@@ -9,7 +9,7 @@ set "DD=%result:~6,2%"
 
 
 F:
-cd fdrs_bmkg
+cd spartan_fdrs
 cd data
 md titik_hotspot
 cd titik_hotspot
@@ -21,7 +21,7 @@ wget http://satelit.bmkg.go.id/IMAGE/HOTSPOT/2020/08/hotspot_%yyyy%%mm%%dd%.txt
 
 
 F:
-cd F:/fdrs_bmkg/
-py -2 F:/fdrs_bmkg/TXT_TO_JSON_SATELITBMKG.py
+cd F:/spartan_fdrs/
+py -2 F:/spartan_fdrs/TXT_TO_JSON_SATELITBMKG.py
 
 pause

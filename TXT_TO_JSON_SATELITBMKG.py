@@ -7,34 +7,34 @@ from datetime import datetime
 import shutil
 from PIL import Image
 cwd = os.getcwd()
-path = os.path.join(cwd, "FDRS_ECMWF_00_PNG_KIRIM.py")
-
-##
-###-----INPUT DATA 00-----#
-##tanggal_00 = "05"
-##bulan_00 = "04"	 	
-##tahun_00 = "2020"
+path = os.path.join(cwd, "TXT_TO_JSON_SATELITBMKG.py")
 
 
 #-----INPUT DATA 00-----#
-tanggal_00 = (datetime.today() + timedelta(days=0)).strftime("%d")
-bulan_00 = (datetime.today() + timedelta(days=0)).strftime("%m") 	
-tahun_00 = (datetime.today() + timedelta(days=0)).strftime("%Y")
+##tanggal_00 = "03"
+##bulan_00 = "08"	 	
+##tahun_00 = "2020"
+
+
+##-----INPUT DATA 00-----#
+tanggal_00 = (datetime.today() + timedelta(days=-1)).strftime("%d")
+bulan_00 = (datetime.today() + timedelta(days=-1)).strftime("%m") 	
+tahun_00 = (datetime.today() + timedelta(days=-1)).strftime("%Y")
 tanggal_now = (datetime.today() + timedelta(days=0)).strftime("%d")
 bulan_now = (datetime.today() + timedelta(days=0)).strftime("%m") 	
 tahun_now = (datetime.today() + timedelta(days=0)).strftime("%Y")	
 
 
 
-df = pd.read_csv("F:/fdrs_bmkg/data/titik_hotspot/"+tahun_00+""+bulan_00+""+tanggal_00+"/pagi/hotspot_"+tahun_00+""+bulan_00+""+tanggal_00+".txt",delimiter='\t',header = None,names=["Bujur", "Lintang", "Kepercayaan", "Region", "Provinsi", "Kabupaten", "Kecamatan","Satelit", "Tanggal", "Waktu"])
+df = pd.read_csv("F:/spartan_fdrs/data/titik_hotspot/"+tahun_00+""+bulan_00+""+tanggal_00+"/pagi/hotspot_"+tahun_00+""+bulan_00+""+tanggal_00+".txt",delimiter='\t',header = None,names=["Bujur", "Lintang", "Kepercayaan", "Region", "Provinsi", "Kabupaten", "Kecamatan","Satelit", "Tanggal", "Waktu"])
 df.drop(df.head(1).index,inplace=True)
-df.to_csv("F:/fdrs_bmkg/data/htsp.csv", index=False)
+df.to_csv("F:/spartan_fdrs/data/htsp.csv", index=False)
 print(df.head)
 
 
 
-file = 'F:/fdrs_bmkg/data/htsp.csv'
-json_file = 'F:/fdrs_bmkg/data/htsp.json'
+file = 'F:/spartan_fdrs/data/htsp.csv'
+json_file = 'F:/spartan_fdrs/data/htsp.json'
 fieldnames = ("Bujur", "Lintang", "Kepercayaan", "Region", "Provinsi", "Kabupaten", "Kecamatan","Satelit", "Tanggal", "Waktu")
 
         
