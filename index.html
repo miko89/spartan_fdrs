@@ -854,16 +854,16 @@
                 hotspotData = getJSONValue(jsonData)
                 var hotspotDataJSON = JSON.parse(hotspotData)
 
-                // var jsondatafdrs = 'data/GSMAP_20200405_FIX_1.json';
-                // function getJSONValue(fileJSON) {
-                //     var value = $.ajax({
-                //         url: fileJSON,
-                //         async: false
-                //     }).responseText;
-                //     return value
-                // }
-                // datafdrs = getJSONValue(jsondatafdrs)
-                // var datafdrsJSON = JSON.parse(datafdrs)
+                var jsondatafdrs = 'data/GSMAP_20200405_FIX_1.json';
+                function getJSONValue(fileJSON) {
+                    var value = $.ajax({
+                        url: fileJSON,
+                        async: false
+                    }).responseText;
+                    return value
+                }
+                datafdrs = getJSONValue(jsondatafdrs)
+                var datafdrsJSON = JSON.parse(datafdrs)
 
 
 
@@ -898,7 +898,7 @@
                 var hotspotLayerKurang30 = L.layerGroup()
                 var hotspotLayerKurang70 = L.layerGroup()
                 var hotspotLayerLebih70 = L.layerGroup()
-                // var PREC100 = L.layerGroup()
+                var PREC100 = L.layerGroup()
 
 
 
