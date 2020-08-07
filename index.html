@@ -219,6 +219,28 @@
             color: rgb(253, 253, 253);
         }
 
+        .text-hotspotred {
+            margin-left: 20px;
+            text-align: center;
+            font-size: 20px;
+            color: rgb(187, 38, 38);
+        }
+
+        .text-hotspotgreen {
+            margin-left: 20px;
+            text-align: center;
+            font-size: 20px;
+            color: rgb(156, 146, 1);
+        }
+        .text-hotspotblue {
+            margin-left: 35px;
+            text-align: center;
+            font-size: 20px;
+            color: rgb(20, 155, 173);
+            letter-spacing: 2px;
+            word-spacing: 40px;
+        }
+
         .text-tanggal {
             margin-left: 0px;
             letter-spacing: 2px;
@@ -257,9 +279,9 @@
         /* .legend {
             line-height: 18px;
             color: #555;
-        }
+        } */
 
-        .legend i {
+        /* .legend i {
             width: 18px;
             height: 15px;
             float: left;
@@ -271,12 +293,24 @@
 
         .info {
             padding: 5px 6px;
-            font: 10px/16px Arial, Helvetica, sans-serif;
+            font: 15px/20px Arial, Helvetica, sans-serif;
+            background: rgba(250, 249, 249, 0.8);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            opacity: 70%;
+        }
+
+        .info {
+            padding: 5px 6px;
+            font-size: 12px;
             background: rgba(250, 249, 249, 0.8);
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             border-radius: 5px;
             opacity: 80%;
         }
+
+
+
 
         .auto {
             display: block;
@@ -462,6 +496,8 @@
                     <p class="text-slider"> <b>Prakiraan Index FDRS H+ : <span id="demo"> </span></b>  </p>
                     <input onchange='setImage(this)' type="range" min="0" max="7" value="0" step="1" id="myRange"
                     class="slider" />
+
+
                     <img id='garis_slider' src='img/GARIS_SLIDER7.png' class="imageslider" />
                     <!-- <input type="range" min="0" max="7" value="1" class="slider" id="myRange">
                     <p class="text-keterangan"> Prakiraan H+ : <span id="demo"> </span></p> -->
@@ -768,13 +804,16 @@
                 legend.onAdd = function (map) {
 
                     var div = L.DomUtil.create('div', 'info legend'),
-                        grades = ["<b>Titik Hotspot (Sumber:LAPAN) </b>"],
+                        grades = ["<b>Jumlah Hotspot (Sumber:LAPAN)</b>"],
+                        grades_2 = ["<b><span class ='text-hotspotred' id='displayCount9'> </span></b>"]
+                        grades_3 = ["<b><span class ='text-hotspotgreen' id='displayCount8'> </span></b>"]
+                        grades_4 = ["<b><span class ='text-hotspotblue' id='displayCount7'> </span></b>"]                
                         labels = ['img/Hotspot8.png'];
 
                     // loop through our density intervals and generate a label with a colored square for each interval
                     for (var j = 0; j < grades.length; j++) {
                         div.innerHTML +=
-                            grades[j] + '<br>' + (" <img src=" + labels[j] + " height='45' width='138'>");
+                            grades[j]+"<br>"+ grades_4[j] + grades_3[j] + grades_2[j] + ("<center><img src=" + labels[j] + " height='45' width='138'></center>") ;
                     }
 
                     return div;
@@ -792,7 +831,7 @@
                     // loop through our density intervals and generate a label with a colored square for each interval
                     for (var i = 0; i < grades.length; i++) {
                         div.innerHTML +=
-                            ("<img src=" + labels[i] + " height='290' width='20'>" + '<br>');
+                            ("<img src=" + labels[i] + " height='265' width='18'>" + '<br>');
                     }
 
                     return div;
@@ -853,6 +892,10 @@
                 }
                 hotspotData = getJSONValue(jsonData)
                 var hotspotDataJSON = JSON.parse(hotspotData)
+
+               
+
+                
 
                 var jsondatafdrs = 'data/GSMAP_20200405_FIX_1.json';
                 function getJSONValue(fileJSON) {
@@ -932,6 +975,33 @@
                     if (kepercayaan > 8) { hotspotLayerLebih70.addLayer(marker).addTo(map);}
                     else { }
                 }
+
+               
+
+                function getCount(kepercayaan) {
+                var count = 0;
+                for (m = 0; m < hotspotDataJSON.length; m++) {
+                if (hotspotDataJSON[m].Kepercayaan == kepercayaan) {count++;
+                     }
+                    }
+                 return count;
+                }
+            
+                var jumlah_hotspot_9 = getCount(9)
+                console.log(jumlah_hotspot_9)
+                var displayCount9 = document.getElementById("displayCount9")
+                displayCount9.innerHTML = jumlah_hotspot_9
+
+                var jumlah_hotspot_8 = getCount(8)
+                console.log(jumlah_hotspot_8)
+                var displayCount8 = document.getElementById("displayCount8")
+                displayCount8.innerHTML = jumlah_hotspot_8
+
+                var jumlah_hotspot_7 = getCount(7)
+                console.log(jumlah_hotspot_7)
+                var displayCount7 = document.getElementById("displayCount7")
+                displayCount7.innerHTML = jumlah_hotspot_7
+
 // ============================================================ASEAN===============================================================
                 // for (i = 0; i < hotspotDataJSON.length; i++) {
                 //     var kepercayaan = parseInt(hotspotDataJSON[i].Kepercayaan)
@@ -1081,7 +1151,7 @@
                     new L.LatLng(27.25, 148.15)
                 )
 
-                var LayerFDRS_ffmc = L.imageOverlay(imageUrl_ffmc, imageBounds_ffmc, { zindex: 900 })//.addTo(map);
+                var LayerFDRS_ffmc = L.imageOverlay(imageUrl_ffmc, imageBounds_ffmc, { zindex: 900 }).addTo(map);
                 var LayerFDRS_dmc = L.imageOverlay(imageUrl_dmc, imageBounds_dmc, { zindex: 900 })//.addTo(map);
                 var LayerFDRS_dc = L.imageOverlay(imageUrl_dc, imageBounds_dc, { zindex: 900 })//.addTo(map);
                 var LayerFDRS_fwi = L.imageOverlay(imageUrl_fwi, imageBounds_fwi, { zindex: 900 })//.addTo(map);
@@ -1110,12 +1180,12 @@
                     "FWI": LayerFDRS_fwi,
                     "BUI": LayerFDRS_bui,
                     "ISI": LayerFDRS_isi,
-                    "PREC": LayerFDRS_rain,
+                    // "PREC": LayerFDRS_rain,
 
                     "<img src='img/hs_rendah.png'/> <span class='my-layer-item'>0-29%</span>": hotspotLayerKurang30,
                     "<img src='img/hs_sedang.png'/> <span class='my-layer-item'>30-79%</span>": hotspotLayerKurang70,
                     "<img src='img/hs_tinggi.png'/> <span class='my-layer-item'>80-100%</span>": hotspotLayerLebih70,
-                    "PREC100": PREC100,
+                    // "PREC100": PREC100,
                    
 
                 };
@@ -1284,11 +1354,6 @@
                             $('#change-imageKET').attr('src', 'img/ket_isi_1.png');
                         }
                     });
-
-
-
-
-
 
 
 
