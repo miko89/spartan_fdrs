@@ -17,9 +17,9 @@ path = os.path.join(cwd, "TXT_TO_JSON_SATELITBMKG.py")
 
 
 ##-----INPUT DATA 00-----#
-tanggal_00 = (datetime.today() + timedelta(days=-1)).strftime("%d")
-bulan_00 = (datetime.today() + timedelta(days=-1)).strftime("%m") 	
-tahun_00 = (datetime.today() + timedelta(days=-1)).strftime("%Y")
+tanggal_00 = (datetime.today() + timedelta(days=0)).strftime("%d")
+bulan_00 = (datetime.today() + timedelta(days=0)).strftime("%m") 	
+tahun_00 = (datetime.today() + timedelta(days=0)).strftime("%Y")
 tanggal_now = (datetime.today() + timedelta(days=0)).strftime("%d")
 bulan_now = (datetime.today() + timedelta(days=0)).strftime("%m") 	
 tahun_now = (datetime.today() + timedelta(days=0)).strftime("%Y")	
