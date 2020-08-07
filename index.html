@@ -996,14 +996,14 @@
 
 
 
-                // for (l = 0; l < datafdrsJSON.length; l++) {
-                //     var PREC = parseInt(datafdrsJSON[l].PREC)
-                //     var Coordinate = new L.latLng(([datafdrsJSON[l].lat, datafdrsJSON[l].lon]))
-                //     var marker = L.marker(Coordinate, { icon: customIcon })
-                //     marker.bindPopup("<b>FFMC: </b>" + datafdrsJSON[l].FFMC + '</br>' + "<b>ANGIN : </b>" + datafdrsJSON[l].WIND + "knt" + '</br>' + "<b>PREC : </b>" + datafdrsJSON[l].PREC + "mm" + '</br>' + "<b>SUHU: </b>" + datafdrsJSON[l].T + 'C');
-                //     if (PREC > 50) { PREC100.addLayer(marker)}
-                //     else { }
-                // }
+                for (l = 0; l < datafdrsJSON.length; l++) {
+                    var PREC = parseInt(datafdrsJSON[l].PREC)
+                    var Coordinate = new L.latLng(([datafdrsJSON[l].lat, datafdrsJSON[l].lon]))
+                    var marker = L.marker(Coordinate, { icon: customIcon })
+                    marker.bindPopup("<b>FFMC: </b>" + datafdrsJSON[l].FFMC + '</br>' + "<b>ANGIN : </b>" + datafdrsJSON[l].WIND + "knt" + '</br>' + "<b>PREC : </b>" + datafdrsJSON[l].PREC + "mm" + '</br>' + "<b>SUHU: </b>" + datafdrsJSON[l].T + 'C');
+                    if (PREC > 50) { PREC100.addLayer(marker)}
+                    else { }
+                }
 
 
                 // var jsonData1 = 'data/hotspot_fdrs_1.json';
