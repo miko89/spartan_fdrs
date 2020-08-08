@@ -193,6 +193,42 @@
     },
     {
         "Kepercayaan": "8",
+        "Kabupaten": "KAB. JAYAPURA",
+        "Region": "PAPUA",
+        "Tanggal": "2020-08-08",
+        "Satelit": "AQUA",
+        "Waktu": "04:07:00",
+        "Bujur": "140.1374",
+        "Provinsi": "PAPUA",
+        "Kecamatan": "NIMBORAN",
+        "Lintang": "-2.6035"
+    },
+    {
+        "Kepercayaan": "8",
+        "Kabupaten": "KAB. JAYAPURA",
+        "Region": "PAPUA",
+        "Tanggal": "2020-08-08",
+        "Satelit": "AQUA",
+        "Waktu": "04:07:00",
+        "Bujur": "140.3904",
+        "Provinsi": "PAPUA",
+        "Kecamatan": "SENTANI BARAT",
+        "Lintang": "-2.5291"
+    },
+    {
+        "Kepercayaan": "8",
+        "Kabupaten": "KAB. YAHUKIMO",
+        "Region": "PAPUA",
+        "Tanggal": "2020-08-08",
+        "Satelit": "AQUA",
+        "Waktu": "04:07:00",
+        "Bujur": "140.1205",
+        "Provinsi": "PAPUA",
+        "Kecamatan": "ENDOMEN",
+        "Lintang": "-4.0765"
+    },
+    {
+        "Kepercayaan": "8",
         "Kabupaten": "KAB. POSO",
         "Region": "SULAWESI",
         "Tanggal": "2020-08-08",
