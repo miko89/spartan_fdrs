@@ -14,8 +14,8 @@ md visibility
 cd visibility
 mkdir %yyyy%%mm%%dd%
 cd %yyyy%%mm%%dd%
-mkdir pagi
-cd pagi
-wget https://www.ogimet.com/ultimos_synops2.php?lang=en&estado=Indon&fmt=txt&Send=Send
+
+wget wget --trust-server-names http://www.superantispyware.com/sasportable.php
+
 
 pause
