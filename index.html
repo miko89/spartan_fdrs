@@ -605,7 +605,7 @@
                 date00.innerHTML = day + "/" + months[month] + "/" + year;
 
                 var date01 = document.getElementById("Date01")
-                date01.innerHTML = day + 1 + "/" + months[month] + "/" + year;
+                date01.innerHTML = day + 1 + "/" + months[month] + "/" + year
 
                 var date02 = document.getElementById("Date02")
                 date02.innerHTML = day + 2 + "/" + months[month] + "/" + year;
@@ -1158,9 +1158,9 @@
                 // <!--======================================================== LAYER CONTROL =====================================================  -->
 
                 var baseLayers = {
-                    "Terrain": terrain,
-                    "Gray scale": grayscale,
-                    "OSM": OSM,
+                    "<span style='color: blue'>Terrain</span>": terrain,
+                    "<span style='color: blue'>Grayscale</span>": grayscale,
+                    "<span style='color: blue'>Open Street Map</span>": OSM,
                     // "mapBox": mapbox
                 };
 
@@ -1168,7 +1168,7 @@
                     "Nama Wilayah": terrain_labels,
                     // "Provinsi Riau": LayerKAB_RIAU,
 
-                    "FFMC": LayerFDRS_ffmc,
+                    "<span style='color: red'>FFMC</span>": LayerFDRS_ffmc,
                     "DMC": LayerFDRS_dmc,
                     "DC": LayerFDRS_dc,
                     "FWI": LayerFDRS_fwi,

@@ -4,8 +4,8 @@ import json
 import pandas as pd
 from datetime import datetime, timedelta
 from datetime import datetime
-import shutil
-from PIL import Image
+##import shutil
+##from PIL import Image
 cwd = os.getcwd()
 path = os.path.join(cwd, "TXT_TO_JSON_SATELITBMKG.py")
 
@@ -17,9 +17,9 @@ path = os.path.join(cwd, "TXT_TO_JSON_SATELITBMKG.py")
 
 
 ##-----INPUT DATA 00-----#
-tanggal_00 = (datetime.today() + timedelta(days=0)).strftime("%d")
-bulan_00 = (datetime.today() + timedelta(days=0)).strftime("%m") 	
-tahun_00 = (datetime.today() + timedelta(days=0)).strftime("%Y")
+tanggal_00 = (datetime.today() + timedelta(days=-1)).strftime("%d")
+bulan_00 = (datetime.today() + timedelta(days=-1)).strftime("%m") 	
+tahun_00 = (datetime.today() + timedelta(days=-1)).strftime("%Y")
 tanggal_now = (datetime.today() + timedelta(days=0)).strftime("%d")
 bulan_now = (datetime.today() + timedelta(days=0)).strftime("%m") 	
 tahun_now = (datetime.today() + timedelta(days=0)).strftime("%Y")	
