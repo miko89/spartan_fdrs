@@ -60,10 +60,10 @@ df = pd.read_csv("F:visibility_wioo.txt",delimiter=' ',header =None,names=["DD/M
 ##df.drop(df.head(1).index,inplace=True)
 
 df.drop(["SAID31","STATION", "UTC", "SANDI", "CLOUD1", "CLOUD12", "SUHU", "TEKANAN", "NOSIG/TEMPO", "FM/TL", "VIS", "WW", "CLD1", "CLD2"], axis=1, inplace=True)
-df.to_csv("F:/spartan_fdrs/data/visibility.csv", index=False)
+df.to_csv("F:/spartan_fdrs/data/visibility_wioo.csv", index=False)
 print(df.drop)
 
-data = pd.read_csv("F:/spartan_fdrs/data/visibility_wioo.csv") 
+df = pd.read_csv("F:/spartan_fdrs/data/visibility_wioo.csv") 
 # displying  dataframe - Output 1 
 df.head() 
   
@@ -79,19 +79,19 @@ df.to_csv("F:/spartan_fdrs/data/visibility_wioo.csv", index=False)
 top = pd.read_csv("F:/spartan_fdrs/data/visibility_wioo.csv", nrows=1)
 headers = top.columns.values
 
-with open("F:/spartan_fdrs/data/visibility_wioo.csv", "r") as f, open("F:/spartan_fdrs/data/visibility_lasttime.csv","w") as g:
+with open("F:/spartan_fdrs/data/visibility_wioo.csv", "r") as f, open("F:/spartan_fdrs/data/visibility_wioo_lasttime.csv","w") as g:
     last_line = f.readlines()[-1].strip().split(",")
     c = csv.writer(g)
     c.writerow(headers)
     c.writerow(last_line)
 
-bottom = pd.read_csv("F:/spartan_fdrs/data/visibility__wioo.csv")
+bottom = pd.read_csv("F:/spartan_fdrs/data/visibility_wioo_lasttime.csv")
 concatenated = pd.concat([bottom])
 concatenated.reset_index(inplace=True, drop=True)
 
 print(concatenated)
 
-file = 'F:/spartan_fdrs/data/visibility__wioo.csv'
+file = 'F:/spartan_fdrs/data/visibility_wioo_lasttime.csv'
 json_file = 'F:/spartan_fdrs/data/visibility_wioo.json'
 fieldnames = ("DD/MM/YYYY", "ICAO", "WIND", "VISIBILITY", "WEATHER")
 
