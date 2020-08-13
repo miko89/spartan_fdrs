@@ -953,9 +953,9 @@
                 var hotspotLayerLebih70 = L.layerGroup()
                 var PREC100 = L.layerGroup()
                 var vis8000 = L.layerGroup()
-                var vis4800 = L.layerGroup()
-                var vis1600 = L.layerGroup()
-                var vis100 = L.layerGroup()
+                // var vis4800 = L.layerGroup()
+                // var vis1600 = L.layerGroup()
+                // var vis100 = L.layerGroup()
 
 
 
@@ -1017,11 +1017,11 @@
 
 
                 for (a = 0; a < visibilityDataJSON.length; a++) {
-                    var vis_8000 = parseInt(visibilityDataJSON[a].Visibility)
-                    var Coordinate = new L.latLng(([visibilityDataJSON[a].Long, visibilityDataJSON[a].Lat]))
+                    var visibility = parseInt(visibilityDataJSON[a].Visibility)
+                    var Coordinate = new L.latLng(([visibilityDataJSON[a].Lat, visibilityDataJSON[a].Long]))
                     var marker = L.marker(Coordinate, { icon: customIcon_vis8000 })
-                    marker.bindPopup("<b>Tgl/Bln/Thn: </b>" + visibilityDataJSON[a].Tgl/Bln/Thn + '</br>' + "<b>Waktu : </b>" + visibilityDataJSON[a].Waktu+ '</br>' + "<b>Visibility : </b>" + visibilityDataJSON[a].Visibility);
-                    if (Visibility < 8000) {vis8000.addLayer(marker);}
+                    marker.bindPopup("<b>"+visibilityDataJSON[a].ICAO +"</b>"+'</br>'+"<b>Thn/Bln/Tgl : </b>"+hotspotDataJSON[a].Tanggal+'</br>'+"<b>Waktu : </b>"+ visibilityDataJSON[a].Waktu+'</br>'+"<b>Visibility : </b>" + visibilityDataJSON[a].Visibility+"M"+ "<br>"+"<b>Angin(A/K) : </b>" + visibilityDataJSON[a].Angin);
+                    if (visibility < 8000) { vis8000.addLayer(marker);}
 
                     else { }
                
