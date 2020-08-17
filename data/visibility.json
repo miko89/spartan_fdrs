@@ -1,35 +1,35 @@
 [
     {
         "": "0",
-        "Tanggal": "13-08-2020",
-        "Waktu": "19:00:00Z\t",
+        "Tanggal": "17-08-2020",
+        "Waktu": "04:30:00Z\t",
         "Lat": "0.46",
         "Long": "101.44388888888888",
-        "ICAO": "Stamet I Sultan Syarif Kasim II - Pekanbaru/WIBB",
-        "Angin": "00000KT",
-        "Visibility": "8000",
-        "Cuaca": "SCT014"
+        "ICAO": "Stamet I Sultan Syarif Kasim II - Pekanbaru (WIBB)",
+        "Angin": "15010KT",
+        "Visibility": "9999",
+        "Cuaca": "FEW015"
     },
     {
         "": "1",
-        "Tanggal": "13-08-2020",
-        "Waktu": "19:00:00Z\t",
+        "Tanggal": "17-08-2020",
+        "Waktu": "04:30:00Z\t",
         "Lat": "-1.630466",
         "Long": "103.642847",
-        "ICAO": "Stamet I Sultan Thaha - Jambi/WIJJ",
-        "Angin": "13003KT",
+        "ICAO": "Stamet I Sultan Thaha - Jambi (WIJJ)",
+        "Angin": "15009KT",
         "Visibility": "9999",
-        "Cuaca": "SCT014"
+        "Cuaca": "FEW018"
     },
     {
         "": "2",
-        "Tanggal": "13-08-2020",
-        "Waktu": "19:00:00Z\t",
+        "Tanggal": "17-08-2020",
+        "Waktu": "04:30:00Z\t",
         "Lat": "-0.14888888888888888",
         "Long": "109.4027777777778",
-        "ICAO": "Stamet I Supadio - Pontianak/WIOO",
-        "Angin": "00000KT",
-        "Visibility": "6000",
-        "Cuaca": "SCT012"
+        "ICAO": "Stamet I Supadio - Pontianak (WIOO)",
+        "Angin": "16005KT",
+        "Visibility": "9999",
+        "Cuaca": "BKN012"
     }
 ]

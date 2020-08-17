@@ -75,7 +75,7 @@ df.to_csv("F:/spartan_fdrs/data/visibility/vis_last_wioo.csv", index=False)
 df = pd.read_csv("F:/spartan_fdrs/data/visibility/vis_last_wioo.csv")
 station = []
 for d in df["ICAO"]:
-    d = d.replace('WIOO', 'Stamet I Supadio - Pontianak/WIOO')
+    d = d.replace('WIOO', 'Stamet I Supadio - Pontianak (WIOO)')
     station.append(d)
 df["ICAO"] = station
 print (station)
@@ -143,7 +143,7 @@ df.to_csv("F:/spartan_fdrs/data/visibility/vis_last_wijj.csv", index=False)
 df = pd.read_csv("F:/spartan_fdrs/data/visibility/vis_last_wijj.csv")
 station = []
 for d in df["ICAO"]:
-    d = d.replace('WIJJ', 'Stamet I Sultan Thaha - Jambi/WIJJ')
+    d = d.replace('WIJJ', 'Stamet I Sultan Thaha - Jambi (WIJJ)')
     station.append(d)
 df["ICAO"] = station
 print (station)
@@ -216,7 +216,7 @@ df.to_csv("F:/spartan_fdrs/data/visibility/vis_last_wibb.csv", index=False)
 df = pd.read_csv("F:/spartan_fdrs/data/visibility/vis_last_wibb.csv")
 station = []
 for d in df["ICAO"]:
-    d = d.replace('WIBB', 'Stamet I Sultan Syarif Kasim II - Pekanbaru/WIBB')
+    d = d.replace('WIBB', 'Stamet I Sultan Syarif Kasim II - Pekanbaru (WIBB)')
     station.append(d)
 df["ICAO"] = station
 print (station)
