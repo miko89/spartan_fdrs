@@ -969,12 +969,32 @@
                     iconAnchor: [0,0]
                 }) // size of the icon  
                
+                var customIcon_vis4800 = L.icon({
+                    iconUrl: 'img/visibility_4800.gif',
+                    iconSize: [100, 10],
+                    iconAnchor: [0,0]
+                }) // size of the icon  
+
+                var customIcon_vis1600 = L.icon({
+                    iconUrl: 'img/visibility_1600.gif',
+                    iconSize: [100, 10],
+                    iconAnchor: [0,0]
+                }) // size of the icon  
+
+                var customIcon_vis0 = L.icon({
+                    iconUrl: 'img/visibility_0.gif',
+                    iconSize: [100, 10],
+                    iconAnchor: [0,0]
+                }) // size of the icon  
 
                 var hotspotLayerKurang30 = L.layerGroup()
                 var hotspotLayerKurang70 = L.layerGroup()
                 var hotspotLayerLebih70 = L.layerGroup()
                 var PREC100 = L.layerGroup()
                 var vis8000 = L.layerGroup()
+                var vis4800 = L.layerGroup()
+                var vis1600 = L.layerGroup()
+                var vis0 = L.layerGroup()
                 // var vis4800 = L.layerGroup()
                 // var vis1600 = L.layerGroup()
                 // var vis100 = L.layerGroup()
@@ -1050,9 +1070,42 @@
 
                 }
 
+                for (b = 0; b < visibilityDataJSON.length; b++) {
+                    var visibility = parseInt(visibilityDataJSON[b].Visibility)
+                    var Coordinate = new L.latLng(([visibilityDataJSON[b].Lat, visibilityDataJSON[b].Long]))
+                    var marker = L.marker(Coordinate, { icon: customIcon_vis4800 })
+                    marker.bindPopup("<b>"+visibilityDataJSON[b].ICAO +"</b>"+'</br>'+"<b>Thn/Bln/Tgl : </b>"+hotspotDataJSON[b].Tanggal+'</br>'+"<b>Waktu : </b>"+ visibilityDataJSON[b].Waktu+'</br>'+"<b>Visibility : </b>" + visibilityDataJSON[b].Visibility+"M"+ "<br>"+"<b>Angin(A/K) : </b>" + visibilityDataJSON[b].Angin);
+                    if (visibility > 4700 && visibility < 8100) { vis4800.addLayer(marker);}
+
+                    else { }
+               
+
+                }
 
 
+                for (c = 0; c < visibilityDataJSON.length; c++) {
+                    var visibility = parseInt(visibilityDataJSON[c].Visibility)
+                    var Coordinate = new L.latLng(([visibilityDataJSON[c].Lat, visibilityDataJSON[c].Long]))
+                    var marker = L.marker(Coordinate, { icon: customIcon_vis1600 })
+                    marker.bindPopup("<b>"+visibilityDataJSON[c].ICAO +"</b>"+'</br>'+"<b>Thn/Bln/Tgl : </b>"+hotspotDataJSON[c].Tanggal+'</br>'+"<b>Waktu : </b>"+ visibilityDataJSON[c].Waktu+'</br>'+"<b>Visibility : </b>" + visibilityDataJSON[c].Visibility+"M"+ "<br>"+"<b>Angin(A/K) : </b>" + visibilityDataJSON[c].Angin);
+                    if (visibility > 1500 && visibility < 4900) { vis1600.addLayer(marker);}
 
+                    else { }
+               
+
+                }
+
+                for (d = 0; d < visibilityDataJSON.length; d++) {
+                    var visibility = parseInt(visibilityDataJSON[d].Visibility)
+                    var Coordinate = new L.latLng(([visibilityDataJSON[d].Lat, visibilityDataJSON[d].Long]))
+                    var marker = L.marker(Coordinate, { icon: customIcon_vis0 })
+                    marker.bindPopup("<b>"+visibilityDataJSON[d].ICAO +"</b>"+'</br>'+"<b>Thn/Bln/Tgl : </b>"+hotspotDataJSON[d].Tanggal+'</br>'+"<b>Waktu : </b>"+ visibilityDataJSON[d].Waktu+'</br>'+"<b>Visibility : </b>" + visibilityDataJSON[d].Visibility+"M"+ "<br>"+"<b>Angin(A/K) : </b>" + visibilityDataJSON[d].Angin);
+                    if (visibility < 1600) { vis0.addLayer(marker);}
+
+                    else { }
+               
+
+                }
 
 
 // ============================================================ASEAN===============================================================
@@ -1238,7 +1291,10 @@
                     "<img src='img/hs_rendah.png'/> <span class='my-layer-item'>0-29%</span>": hotspotLayerKurang30,
                     "<img src='img/hs_sedang.png'/> <span class='my-layer-item'>30-79%</span>": hotspotLayerKurang70,
                     "<img src='img/hs_tinggi.png'/> <span class='my-layer-item'>80-100%</span>": hotspotLayerLebih70,
-                    "Vis": vis8000
+                    "Vis>8000": vis8000,
+                    "Vis 4800-8000": vis4800,
+                    "Vis 1600-4800": vis1600,
+                    "Vis <1600": vis0
                     // "PREC100": PREC100,
                    
 

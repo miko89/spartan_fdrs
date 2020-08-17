@@ -1,4 +1,4 @@
-set day=-1
+set day=0
 echo >"%temp%\%~n0.vbs" s=DateAdd("d",%day%,now) : d=weekday(s)
 echo>>"%temp%\%~n0.vbs" WScript.Echo year(s)^& right(100+month(s),2)^& right(100+day(s),2)
 for /f %%a in ('cscript /nologo "%temp%\%~n0.vbs"') do set "result=%%a"
@@ -21,6 +21,6 @@ wget -q http://satelit.bmkg.go.id/IMAGE/HOTSPOT/2020/08/hotspot_%yyyy%%mm%%dd%.t
 
 F:
 cd F:/spartan_fdrs/
-py -3 F:/spartan_fdrs/TXT_TO_JSON_SATELITBMKG.py
+py -3 F:/spartan_fdrs/HOTSPOT_JSON_MALAM.py
 
 pause

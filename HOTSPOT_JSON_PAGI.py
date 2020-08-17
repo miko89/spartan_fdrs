@@ -7,7 +7,7 @@ from datetime import datetime
 ##import shutil
 ##from PIL import Image
 cwd = os.getcwd()
-path = os.path.join(cwd, "TXT_TO_JSON_SATELITBMKG.py")
+path = os.path.join(cwd, "HOTSPOT_JSON_PAGI.py")
 
 
 #-----INPUT DATA 00-----#

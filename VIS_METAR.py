@@ -225,6 +225,77 @@ df.to_csv("F:/spartan_fdrs/data/visibility/vis_last_wibb.csv", index=False)
 
 print("FINISH_PEKANBARU")
 
+
+#======================================================= PALEMBANG WIPP ====================================================
+with open('visibility_wipp.txt', 'wb') as f:
+    c = pycurl.Curl()
+    c.setopt(c.URL, 'http://aviation.bmkg.go.id/latest/metar.php?m=8&y=2020&i=wipp')
+    c.setopt(c.WRITEDATA, f)
+    c.perform()
+    c.close()
+print('FINISH, VIS WIPP PALEMBANG.txt')
+
+df = pd.read_csv("F:visibility_wipp.txt",delimiter=' ',header =None,names=["Tanggal", "Waktu", "SAID31", "ICAO", "UTC", "SANDI", "STATION", "Angin", "Visibility", "Cuaca", "CLOUD1", "CLOUD12", "SUHU", "TEKANAN", "NOSIG/TEMPO", "FM/TL", "VIS", "WW", "CLD1", "CLD2"])
+##df.drop(df.head(1).index,inplace=True)
+
+df.drop(["SAID31","STATION", "UTC", "SANDI", "CLOUD1", "CLOUD12", "SUHU", "TEKANAN", "NOSIG/TEMPO", "FM/TL", "VIS", "WW", "CLD1", "CLD2"], axis=1, inplace=True)
+df.to_csv("F:/spartan_fdrs/data/visibility_wipp.csv", index=False)
+print(df.drop)
+
+df = pd.read_csv("F:/spartan_fdrs/data/visibility_wipp.csv") 
+# displying  dataframe - Output 1 
+df.head() 
+  
+# inserting column with static value in data frame 
+df.insert(2, "Lat", "-2.897777777777778")
+df.insert(3, "Long", "104.70083333333334")
+  
+# displaying data frame again - Output 2 
+df.head() 
+
+df.to_csv("F:/spartan_fdrs/data/visibility_wipp.csv", index=False)
+
+top = pd.read_csv("F:/spartan_fdrs/data/visibility_wipp.csv", nrows=1)
+headers = top.columns.values
+
+with open("F:/spartan_fdrs/data/visibility_wipp.csv", "r") as f, open("F:/spartan_fdrs/data/visibility/vis_last_wipp.csv","w") as g:
+    last_line = f.readlines()[-1].strip().split(",")
+    c = csv.writer(g)
+    c.writerow(headers)
+    c.writerow(last_line)
+
+bottom = pd.read_csv("F:/spartan_fdrs/data/visibility/vis_last_wipp.csv")
+concatenated = pd.concat([bottom])
+concatenated.reset_index(inplace=True, drop=True)
+
+print (concatenated)
+
+
+#Change to the Date
+df = pd.read_csv("F:/spartan_fdrs/data/visibility/vis_last_wipp.csv")
+date = []
+for d in df["Tanggal"]:
+    d = d.replace('/', '-')
+    date.append(d)
+df["Tanggal"] = date
+print (date)
+df.to_csv("F:/spartan_fdrs/data/visibility/vis_last_wipp.csv", index=False)
+
+
+#Change to the ICAO
+df = pd.read_csv("F:/spartan_fdrs/data/visibility/vis_last_wipp.csv")
+station = []
+for d in df["ICAO"]:
+    d = d.replace('WIPP', 'Sultan Mahmud Badaruddin II - Palembang (WIPP)')
+    station.append(d)
+df["ICAO"] = station
+print (station)
+df.to_csv("F:/spartan_fdrs/data/visibility/vis_last_wipp.csv", index=False)
+
+
+print("FINISH_PALEMBANG")
+
+
 # MERGE DATA VISIBILITY ALL STATION
 import pandas as pd
 import glob
