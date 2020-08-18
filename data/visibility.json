@@ -2,56 +2,56 @@
     {
         "": "0",
         "Tanggal": "18-08-2020",
-        "Waktu": "07:30:00Z\t",
+        "Waktu": "13:00:00Z\t",
         "Lat": "-2.2266666666666666",
         "Long": "113.94388888888888",
         "ICAO": "Stamet Tjilik Riwut - Palangkaraya (WAGG)",
-        "Angin": "16006KT",
-        "Visibility": "9999",
-        "Cuaca": "BKN012"
+        "Angin": "21008KT",
+        "Visibility": "9000",
+        "Cuaca": "FEW013"
     },
     {
         "": "1",
         "Tanggal": "18-08-2020",
-        "Waktu": "07:30:00Z\t",
+        "Waktu": "13:30:00Z\t",
         "Lat": "0.46",
         "Long": "101.44388888888888",
         "ICAO": "Stamet I Sultan Syarif Kasim II - Pekanbaru (WIBB)",
-        "Angin": "19006KT",
-        "Visibility": "9999",
-        "Cuaca": "SCT014"
+        "Angin": "17005KT",
+        "Visibility": "8000",
+        "Cuaca": "FEW017"
     },
     {
         "": "2",
         "Tanggal": "18-08-2020",
-        "Waktu": "07:30:00Z\t",
+        "Waktu": "13:30:00Z\t",
         "Lat": "-1.630466",
         "Long": "103.642847",
         "ICAO": "Stamet I Sultan Thaha - Jambi (WIJJ)",
-        "Angin": "13006KT",
+        "Angin": "12007KT",
         "Visibility": "9999",
         "Cuaca": "FEW016"
     },
     {
         "": "3",
         "Tanggal": "18-08-2020",
-        "Waktu": "07:30:00Z\t",
+        "Waktu": "13:30:00Z\t",
         "Lat": "-0.14888888888888888",
         "Long": "109.4027777777778",
         "ICAO": "Stamet I Supadio - Pontianak (WIOO)",
-        "Angin": "20003KT",
-        "Visibility": "9999",
-        "Cuaca": "FEW011CB"
+        "Angin": "00000KT",
+        "Visibility": "7000",
+        "Cuaca": "SCT012"
     },
     {
         "": "4",
         "Tanggal": "18-08-2020",
-        "Waktu": "07:30:00Z\t",
+        "Waktu": "13:00:00Z\t",
         "Lat": "-2.8977777777777787",
         "Long": "104.70083333333334",
         "ICAO": "Sultan Mahmud Badaruddin II - Palembang (WIPP)",
-        "Angin": "11006KT",
-        "Visibility": "9999",
-        "Cuaca": "SCT010"
+        "Angin": "17002KT",
+        "Visibility": "8000",
+        "Cuaca": "NSC"
     }
 ]
