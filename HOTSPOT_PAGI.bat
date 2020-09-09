@@ -17,7 +17,7 @@ cd %yyyy%%mm%%dd%
 mkdir pagi
 cd pagi
 
-wget -q http://satelit.bmkg.go.id/IMAGE/HOTSPOT/2020/08/hotspot_%yyyy%%mm%%dd%.txt -O /spartan_fdrs/data/titik_hotspot/%yyyy%%mm%%dd%/pagi/hotspot_%yyyy%%mm%%dd%.txt
+wget -q http://satelit.bmkg.go.id/IMAGE/HOTSPOT/%yyyy%/%mm%/hotspot_%yyyy%%mm%%dd%.txt -O /spartan_fdrs/data/titik_hotspot/%yyyy%%mm%%dd%/pagi/hotspot_%yyyy%%mm%%dd%.txt
 
 F:
 cd F:/spartan_fdrs/
