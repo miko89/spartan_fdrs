@@ -707,7 +707,7 @@
                 var road_labels = L.tileLayer('https://{s}.tiles.mapbox.com/v3/weatherdecisiontechnologies.g9a8dn00/{z}/{x}/{y}.png', {
                     pane: 'labels'
                 })//.addTo(map);
-                var terrain = L.tileLayer('https://{s}.tiles.mapbox.com/v3/weatherdecisiontechnologies.g7pcpdfj/{z}/{x}/{y}.png', {
+                var terrain = L.tileLayer('https://{s}. /v3/weatherdecisiontechnologies.g7pcpdfj/{z}/{x}/{y}.png', {
                     // pane: 'labels'
                 }).addTo(map);
                 var terrain_labels = L.tileLayer('https://{s}.tiles.mapbox.com/v3/weatherdecisiontechnologies.g7pd6353/{z}/{x}/{y}.png', {
@@ -1065,7 +1065,7 @@
                     var visibility = parseInt(visibilityDataJSON[a].Visibility)
                     var Coordinate = new L.latLng(([visibilityDataJSON[a].Lat, visibilityDataJSON[a].Long]))
                     var marker = L.marker(Coordinate, { icon: customIcon_vis8000 })
-                    marker.bindPopup("<b>"+visibilityDataJSON[a].ICAO +"</b>"+'</br>'+"<b>Thn/Bln/Tgl : </b>"+hotspotDataJSON[a].Tanggal+'</br>'+"<b>Waktu : </b>"+ visibilityDataJSON[a].Waktu+'</br>'+"<b>Visibility : </b>" + visibilityDataJSON[a].Visibility+"M"+ "<br>"+"<b>Angin(A/K) : </b>" + visibilityDataJSON[a].Angin);
+                    marker.bindPopup("<b>"+visibilityDataJSON[a].ICAO +"</b>"+'</br>'+"<b>Tgl/Bln/Thn : </b>"+visibilityDataJSON[a].Tanggal+'</br>'+"<b>Waktu : </b>"+ visibilityDataJSON[a].Waktu+'</br>'+"<b>Visibility : </b>" + visibilityDataJSON[a].Visibility+"M"+ "<br>"+"<b>Angin(A/K) : </b>" + visibilityDataJSON[a].Angin);
                     if (visibility > 8000) { vis8000.addLayer(marker);}
 
                     else { }
@@ -1077,7 +1077,7 @@
                     var visibility = parseInt(visibilityDataJSON[b].Visibility)
                     var Coordinate = new L.latLng(([visibilityDataJSON[b].Lat, visibilityDataJSON[b].Long]))
                     var marker = L.marker(Coordinate, { icon: customIcon_vis4800 })
-                    marker.bindPopup("<b>"+visibilityDataJSON[b].ICAO +"</b>"+'</br>'+"<b>Thn/Bln/Tgl : </b>"+hotspotDataJSON[b].Tanggal+'</br>'+"<b>Waktu : </b>"+ visibilityDataJSON[b].Waktu+'</br>'+"<b>Visibility : </b>" + visibilityDataJSON[b].Visibility+"M"+ "<br>"+"<b>Angin(A/K) : </b>" + visibilityDataJSON[b].Angin);
+                    marker.bindPopup("<b>"+visibilityDataJSON[b].ICAO +"</b>"+'</br>'+"<b>Tgl/Bln/Thn : </b>"+visibilityDataJSON[b].Tanggal+'</br>'+"<b>Waktu : </b>"+ visibilityDataJSON[b].Waktu+'</br>'+"<b>Visibility : </b>" + visibilityDataJSON[b].Visibility+"M"+ "<br>"+"<b>Angin(A/K) : </b>" + visibilityDataJSON[b].Angin);
                     if (visibility > 4700 && visibility < 8100) { vis4800.addLayer(marker);}
 
                     else { }
@@ -1090,7 +1090,7 @@
                     var visibility = parseInt(visibilityDataJSON[c].Visibility)
                     var Coordinate = new L.latLng(([visibilityDataJSON[c].Lat, visibilityDataJSON[c].Long]))
                     var marker = L.marker(Coordinate, { icon: customIcon_vis1600 })
-                    marker.bindPopup("<b>"+visibilityDataJSON[c].ICAO +"</b>"+'</br>'+"<b>Thn/Bln/Tgl : </b>"+hotspotDataJSON[c].Tanggal+'</br>'+"<b>Waktu : </b>"+ visibilityDataJSON[c].Waktu+'</br>'+"<b>Visibility : </b>" + visibilityDataJSON[c].Visibility+"M"+ "<br>"+"<b>Angin(A/K) : </b>" + visibilityDataJSON[c].Angin);
+                    marker.bindPopup("<b>"+visibilityDataJSON[c].ICAO +"</b>"+'</br>'+"<b>Tgl/Bln/Thn : </b>"+visibilityDataJSON[c].Tanggal+'</br>'+"<b>Waktu : </b>"+ visibilityDataJSON[c].Waktu+'</br>'+"<b>Visibility : </b>" + visibilityDataJSON[c].Visibility+"M"+ "<br>"+"<b>Angin(A/K) : </b>" + visibilityDataJSON[c].Angin);
                     if (visibility > 1500 && visibility < 4900) { vis1600.addLayer(marker);}
 
                     else { }
@@ -1102,7 +1102,7 @@
                     var visibility = parseInt(visibilityDataJSON[d].Visibility)
                     var Coordinate = new L.latLng(([visibilityDataJSON[d].Lat, visibilityDataJSON[d].Long]))
                     var marker = L.marker(Coordinate, { icon: customIcon_vis0 })
-                    marker.bindPopup("<b>"+visibilityDataJSON[d].ICAO +"</b>"+'</br>'+"<b>Thn/Bln/Tgl : </b>"+hotspotDataJSON[d].Tanggal+'</br>'+"<b>Waktu : </b>"+ visibilityDataJSON[d].Waktu+'</br>'+"<b>Visibility : </b>" + visibilityDataJSON[d].Visibility+"M"+ "<br>"+"<b>Angin(A/K) : </b>" + visibilityDataJSON[d].Angin);
+                    marker.bindPopup("<b>"+visibilityDataJSON[d].ICAO +"</b>"+'</br>'+"<b>Tgl/Bln/Thn : </b>"+visibilityDataJSON[d].Tanggal+'</br>'+"<b>Waktu : </b>"+ visibilityDataJSON[d].Waktu+'</br>'+"<b>Visibility : </b>" + visibilityDataJSON[d].Visibility+"M"+ "<br>"+"<b>Angin(A/K) : </b>" + visibilityDataJSON[d].Angin);
                     if (visibility < 1600) { vis0.addLayer(marker);}
 
                     else { }
