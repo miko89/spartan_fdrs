@@ -1,1 +1,146 @@
-[]
+[
+    {
+        "Bujur": "123.0147",
+        "Lintang": "-10.8465",
+        "Kepercayaan": "7",
+        "Region": "KEPULAUAN NUSA TENGGARA",
+        "Provinsi": "NUSA TENGGARA TIMUR",
+        "Kabupaten": "ROTE NDAO",
+        "Kecamatan": "ROTE BARAT DAYA",
+        "Satelit": "TERRA",
+        "Tanggal": "2020-11-30",
+        "Waktu": "09:33:00"
+    },
+    {
+        "Bujur": "120.2006",
+        "Lintang": "-9.5469",
+        "Kepercayaan": "7",
+        "Region": "KEPULAUAN NUSA TENGGARA",
+        "Provinsi": "NUSA TENGGARA TIMUR",
+        "Kabupaten": "SUMBA TIMUR",
+        "Kecamatan": "HAHARU",
+        "Satelit": "TERRA",
+        "Tanggal": "2020-11-30",
+        "Waktu": "09:33:00"
+    },
+    {
+        "Bujur": "123.5143",
+        "Lintang": "-8.2739",
+        "Kepercayaan": "7",
+        "Region": "KEPULAUAN NUSA TENGGARA",
+        "Provinsi": "NUSA TENGGARA TIMUR",
+        "Kabupaten": "LEMBATA",
+        "Kecamatan": "ILEAPE",
+        "Satelit": "AQUA",
+        "Tanggal": "2020-11-30",
+        "Waktu": "00:13:00"
+    },
+    {
+        "Bujur": "122.1399",
+        "Lintang": "-4.4722",
+        "Kepercayaan": "7",
+        "Region": "SULAWESI",
+        "Provinsi": "SULAWESI TENGGARA",
+        "Kabupaten": "KONAWE SELATAN",
+        "Kecamatan": "TINANGGEA",
+        "Satelit": "AQUA",
+        "Tanggal": "2020-11-30",
+        "Waktu": "12:28:00"
+    },
+    {
+        "Bujur": "121.7001",
+        "Lintang": "-4.7842",
+        "Kepercayaan": "7",
+        "Region": "SULAWESI",
+        "Provinsi": "SULAWESI TENGGARA",
+        "Kabupaten": "BOMBANA",
+        "Kecamatan": "POLEANG UTARA",
+        "Satelit": "AQUA",
+        "Tanggal": "2020-11-30",
+        "Waktu": "12:28:00"
+    },
+    {
+        "Bujur": "121.7389",
+        "Lintang": "-4.1431",
+        "Kepercayaan": "7",
+        "Region": "SULAWESI",
+        "Provinsi": "SULAWESI TENGGARA",
+        "Kabupaten": "KOLAKA",
+        "Kecamatan": "BAULA",
+        "Satelit": "AQUA",
+        "Tanggal": "2020-11-30",
+        "Waktu": "12:28:00"
+    },
+    {
+        "Bujur": "122.4196",
+        "Lintang": "-3.9067",
+        "Kepercayaan": "7",
+        "Region": "SULAWESI",
+        "Provinsi": "SULAWESI TENGGARA",
+        "Kabupaten": "KONAWE",
+        "Kecamatan": "BONDOALA",
+        "Satelit": "AQUA",
+        "Tanggal": "2020-11-30",
+        "Waktu": "12:28:00"
+    },
+    {
+        "Bujur": "122.4101",
+        "Lintang": "-3.9081",
+        "Kepercayaan": "7",
+        "Region": "SULAWESI",
+        "Provinsi": "SULAWESI TENGGARA",
+        "Kabupaten": "KONAWE",
+        "Kecamatan": "BONDOALA",
+        "Satelit": "AQUA",
+        "Tanggal": "2020-11-30",
+        "Waktu": "12:28:00"
+    },
+    {
+        "Bujur": "122.4192",
+        "Lintang": "-3.8991",
+        "Kepercayaan": "7",
+        "Region": "SULAWESI",
+        "Provinsi": "SULAWESI TENGGARA",
+        "Kabupaten": "KONAWE",
+        "Kecamatan": "BONDOALA",
+        "Satelit": "TERRA",
+        "Tanggal": "2020-11-30",
+        "Waktu": "09:33:00"
+    },
+    {
+        "Bujur": "122.2119",
+        "Lintang": "-3.9370",
+        "Kepercayaan": "7",
+        "Region": "SULAWESI",
+        "Provinsi": "SULAWESI TENGGARA",
+        "Kabupaten": "KONAWE",
+        "Kecamatan": "UEPAI",
+        "Satelit": "AQUA",
+        "Tanggal": "2020-11-30",
+        "Waktu": "12:28:00"
+    },
+    {
+        "Bujur": "122.2628",
+        "Lintang": "-3.9577",
+        "Kepercayaan": "7",
+        "Region": "SULAWESI",
+        "Provinsi": "SULAWESI TENGGARA",
+        "Kabupaten": "KONAWE",
+        "Kecamatan": "UEPAI",
+        "Satelit": "AQUA",
+        "Tanggal": "2020-11-30",
+        "Waktu": "12:28:00"
+    },
+    {
+        "Bujur": "122.2722",
+        "Lintang": "-3.9563",
+        "Kepercayaan": "7",
+        "Region": "SULAWESI",
+        "Provinsi": "SULAWESI TENGGARA",
+        "Kabupaten": "KONAWE",
+        "Kecamatan": "UEPAI",
+        "Satelit": "AQUA",
+        "Tanggal": "2020-11-30",
+        "Waktu": "12:28:00"
+    }
+]
