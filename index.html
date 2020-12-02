@@ -11,7 +11,10 @@
         crossorigin=""></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   
+    <link rel="stylesheet" href="https://js.arcgis.com/4.17/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.17/"></script>
 
+    
     <!-- Development version -->
     <!-- <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script> -->
 
@@ -20,9 +23,10 @@
 
     <!-- <script src="js/leaflet.js"></script>
     <link rel="stylesheet" href="css/leaflet.css"> -->
+   
     <!-- <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
-    <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' /> -->
-    <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+    <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' /> 
+    <link rel="stylesheet" href="css/bootstrap.css"> -->
 
 
 
@@ -659,7 +663,7 @@
                     imgdc.src = img_array6[value];
                 }
 
-            
+                //================================================= BASE MAP ============================================================  -->
 
                 // center of the map
                 var center = new L.latLng(8.5, 118.662089);
@@ -693,7 +697,7 @@
                     id: 'mapbox.streets',
                     accessToken: 'pk.eyJ1IjoibWlrbzk2MDAxIiwiYSI6ImNrNmt4cmE1NjA3aHAza28xMnFvcmxrZTIifQ.Yi_7Z09QxAFr5uc1b3llaA'
 
-                });
+                }).addTo(map);
 
                 // Membuat Label pada Layer dengan zIndex (400)
                 map.createPane('labels');
@@ -1276,6 +1280,7 @@
                     "<span style='color: blue'>Terrain</span>": terrain,
                     "<span style='color: blue'>Grayscale</span>": grayscale,
                     "<span style='color: blue'>Open Street Map</span>": OSM,
+                    
                     // "mapBox": mapbox
                 };
 
