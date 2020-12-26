@@ -1,56 +1,56 @@
 [
     {
         "": "0",
-        "Tanggal": "21-12-2020",
-        "Waktu": "12:00:00Z\t",
+        "Tanggal": "26-12-2020",
+        "Waktu": "01:30:00Z\t",
         "Lat": "-2.2266666666666666",
         "Long": "113.94388888888888",
         "ICAO": "Stamet Tjilik Riwut - Palangkaraya (WAGG)",
-        "Angin": "15004KT",
-        "Visibility": "7000",
+        "Angin": "32006KT",
+        "Visibility": "4000",
         "Cuaca": "-RA"
     },
     {
         "": "1",
-        "Tanggal": "21-12-2020",
-        "Waktu": "07:30:00Z\t",
+        "Tanggal": "26-12-2020",
+        "Waktu": "01:30:00Z\t",
         "Lat": "0.46",
         "Long": "101.44388888888888",
         "ICAO": "Stamet I Sultan Syarif Kasim II - Pekanbaru (WIBB)",
-        "Angin": "00000KT",
-        "Visibility": "9000",
-        "Cuaca": "SCT013"
+        "Angin": "14005KT",
+        "Visibility": "8000",
+        "Cuaca": "SCT010"
     },
     {
         "": "2",
-        "Tanggal": "21-12-2020",
-        "Waktu": "13:00:00Z\t",
+        "Tanggal": "26-12-2020",
+        "Waktu": "01:30:00Z\t",
         "Lat": "-1.630466",
         "Long": "103.642847",
         "ICAO": "Stamet I Sultan Thaha - Jambi (WIJJ)",
-        "Angin": "02002KT",
-        "Visibility": "9000",
-        "Cuaca": "FEW015"
+        "Angin": "14003KT",
+        "Visibility": "9999",
+        "Cuaca": "FEW015CB"
     },
     {
         "": "3",
-        "Tanggal": "21-12-2020",
-        "Waktu": "13:00:00Z\t",
+        "Tanggal": "26-12-2020",
+        "Waktu": "01:30:00Z\t",
         "Lat": "-0.14888888888888888",
         "Long": "109.4027777777778",
         "ICAO": "Stamet I Supadio - Pontianak (WIOO)",
-        "Angin": "02005KT",
-        "Visibility": "6000",
-        "Cuaca": "-RA"
+        "Angin": "00000KT",
+        "Visibility": "9999",
+        "Cuaca": "FEW012"
     },
     {
         "": "4",
-        "Tanggal": "21-12-2020",
-        "Waktu": "13:00:00Z\t",
+        "Tanggal": "26-12-2020",
+        "Waktu": "02:00:00Z\t",
         "Lat": "-2.8977777777777787",
         "Long": "104.70083333333334",
         "ICAO": "Sultan Mahmud Badaruddin II - Palembang (WIPP)",
-        "Angin": "36004KT",
+        "Angin": "20003KT",
         "Visibility": "9999",
         "Cuaca": "FEW010"
     }
