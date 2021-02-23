@@ -392,7 +392,7 @@
 
         .imagefdrs {
 
-            opacity: 0.3;
+            opacity: 0.4;
 
         }
 
@@ -491,23 +491,24 @@
                 
                 
                 <div class="slidecontainer">
-                    <p class="text-slider"> <b>Prakiraan Index FDRS H+ : <span id="demo"> </span></b>  </p>
+                    <p class="text-slider"> <b>Data Tanggal : <span id="Date00"> </span> <br> Prakiraan Index FDRS H+ <span style='color: rgb(224, 20, 200)' id="demo"> </span></b>  </p>
+                    <br>
                     <input onchange='setImage(this)' type="range" min="0" max="7" value="0" step="1" id="myRange"
                     class="slider" />
+                
 
-
-                    <img id='garis_slider' src='img/GARIS_SLIDER7.png' class="imageslider" />
+                    <!-- <img id='garis_slider' src='img/GARIS_SLIDER7.png' class="imageslider" /> -->
                     <!-- <input type="range" min="0" max="7" value="1" class="slider" id="myRange">
                     <p class="text-keterangan"> Prakiraan H+ : <span id="demo"> </span></p> -->
                     <p class="text-tanggal"> 
-                        <span id="Date00"> </span>
-                        <span id="Date01"> </span>
+                        
+                        <!-- <span id="Date01"> </span>
                         <span id="Date02"> </span>
                         <span id="Date03"> </span>
                         <span id="Date04"> </span>
                         <span id="Date05"> </span>
                         <span id="Date06"> </span>
-                        <span id="Date07"> </span>
+                        <span id="Date07"> </span> -->
                     </p>
                    
                             </div>
@@ -608,26 +609,26 @@
                 var date00 = document.getElementById("Date00")
                 date00.innerHTML = day + "/" + months[month] + "/" + year;
 
-                var date01 = document.getElementById("Date01")
-                date01.innerHTML = day + 1 + "/" + months[month] + "/" + year
+                // var date01 = document.getElementById("Date01")
+                // date01.innerHTML =  + 1 + "/" + months[month] + "/" + year
 
-                var date02 = document.getElementById("Date02")
-                date02.innerHTML = day + 2 + "/" + months[month] + "/" + year;
+                // var date02 = document.getElementById("Date02")
+                // date02.innerHTML = day + 2 + "/" + months[month] + "/" + year;
 
-                var date03 = document.getElementById("Date03")
-                date03.innerHTML = day + 3 + "/" + months[month] + "/" + year;
+                // var date03 = document.getElementById("Date03")
+                // date03.innerHTML = day + 3 + "/" + months[month] + "/" + year;
 
-                var date04 = document.getElementById("Date04")
-                date04.innerHTML = day + 4 +"/" + months[month] + "/" + year;
+                // var date04 = document.getElementById("Date04")
+                // date04.innerHTML = day + 4 +"/" + months[month] + "/" + year;
 
-                var date05 = document.getElementById("Date05")
-                date05.innerHTML = day + 5 + "/" + months[month] + "/" + year;
+                // var date05 = document.getElementById("Date05")
+                // date05.innerHTML = day + 5 + "/" + months[month] + "/" + year;
 
-                var date06 = document.getElementById("Date06")
-                date06.innerHTML = day + 6 +"/" + months[month] + "/" + year;
+                // var date06 = document.getElementById("Date06")
+                // date06.innerHTML = day + 6 +"/" + months[month] + "/" + year;
 
-                var date07 = document.getElementById("Date07")
-                date07.innerHTML = day + 7 + "/" + months[month] + "/" + year;
+                // var date07 = document.getElementById("Date07")
+                // date07.innerHTML = day + 7 + "/" + months[month] + "/" + year;
 
 
 
@@ -671,14 +672,18 @@
                     '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
                     'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
                     mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
-
-                // Peta Grayscale 
-                var grayscale = L.tileLayer(mbUrl, { id: 'mapbox/light-v9', tileSize: 512, zoomOffset: -1, attribution: mbAttr }),
-                    streets = L.tileLayer(mbUrl, { id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mbAttr });
+                
+                
                 var map = L.map('map', {
                     maxZoom: 15,
                     minZoom: 4,
-                }).setView(center, 4);
+                }).setView(center, 4)
+
+
+                // Peta Grayscale 
+                var grayscale = L.tileLayer(mbUrl, { id: 'mapbox/light-v9', tileSize: 512, zoomOffset: -1, attribution: mbAttr }).addTo(map),
+                    streets = L.tileLayer(mbUrl, { id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mbAttr })
+              
 
                 // Peta OSM
                 var OSM = L.tileLayer(
@@ -690,35 +695,35 @@
                
 
 
-                // Peta MapBOX
-                var mapbox = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-                    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-                    maxZoom: 15,
-                    id: 'mapbox.streets',
-                    accessToken: 'pk.eyJ1IjoibWlrbzk2MDAxIiwiYSI6ImNrNmt4cmE1NjA3aHAza28xMnFvcmxrZTIifQ.Yi_7Z09QxAFr5uc1b3llaA'
+                // // Peta MapBOX
+                // var mapbox = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+                //     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+                //     maxZoom: 15,
+                //     id: 'mapbox.streets',
+                //     accessToken: 'pk.eyJ1IjoibWlrbzk2MDAxIiwiYSI6ImNrNmt4cmE1NjA3aHAza28xMnFvcmxrZTIifQ.Yi_7Z09QxAFr5uc1b3llaA'
 
-                }).addTo(map);
+                // }).addTo(map);
 
-                // Membuat Label pada Layer dengan zIndex (400)
-                map.createPane('labels');
-                map.getPane('labels').style.zIndex = 400;
-                // Layers in this pane are non-interactive and do not obscure mouse/touch events
-                map.getPane('labels').style.pointerEvents = 'none';
+                // // Membuat Label pada Layer dengan zIndex (400)
+                // map.createPane('labels');
+                // map.getPane('labels').style.zIndex = 400;
+                // // Layers in this pane are non-interactive and do not obscure mouse/touch events
+                // map.getPane('labels').style.pointerEvents = 'none';
 
-                var road = L.tileLayer('https://{s}.tiles.mapbox.com/v3/weatherdecisiontechnologies.g9a83pc2/{z}/{x}/{y}.png', {
-                    pane: 'labels'
-                })//.addTo(map);
-                var road_labels = L.tileLayer('https://{s}.tiles.mapbox.com/v3/weatherdecisiontechnologies.g9a8dn00/{z}/{x}/{y}.png', {
-                    pane: 'labels'
-                })//.addTo(map);
-                var terrain = L.tileLayer('https://{s}. /v3/weatherdecisiontechnologies.g7pcpdfj/{z}/{x}/{y}.png', {
-                    // pane: 'labels'
-                }).addTo(map);
-                var terrain_labels = L.tileLayer('https://{s}.tiles.mapbox.com/v3/weatherdecisiontechnologies.g7pd6353/{z}/{x}/{y}.png', {
-                    pane: 'labels'
-                });
+                // var road = L.tileLayer('https://{s}.tiles.mapbox.com/v3/weatherdecisiontechnologies.g9a83pc2/{z}/{x}/{y}.png', {
+                //     pane: 'labels'
+                // })//.addTo(map);
+                // var road_labels = L.tileLayer('https://{s}.tiles.mapbox.com/v3/weatherdecisiontechnologies.g9a8dn00/{z}/{x}/{y}.png', {
+                //     pane: 'labels'
+                // })//.addTo(map);
+                // var terrain = L.tileLayer('https://{s}. /v3/weatherdecisiontechnologies.g7pcpdfj/{z}/{x}/{y}.png', {
+                //     // pane: 'labels'
+                // }).addTo(map);
+                // var terrain_labels = L.tileLayer('https://{s}.tiles.mapbox.com/v3/weatherdecisiontechnologies.g7pd6353/{z}/{x}/{y}.png', {
+                //     pane: 'labels'
+                // });
 
-                //.addTo(map);
+                // //.addTo(map);
 
 
 
@@ -1277,7 +1282,7 @@
                 // <!--======================================================== LAYER CONTROL =====================================================  -->
 
                 var baseLayers = {
-                    "<span style='color: blue'>Terrain</span>": terrain,
+                    // "<span style='color: blue'>Terrain</span>": terrain,
                     "<span style='color: blue'>Grayscale</span>": grayscale,
                     "<span style='color: blue'>Open Street Map</span>": OSM,
                     
@@ -1285,10 +1290,10 @@
                 };
 
                 var overlays = {
-                    "Nama Wilayah": terrain_labels,
-                    // "Provinsi Riau": LayerKAB_RIAU,
+                    // "Nama Wilayah": terrain_labels,
+                    // // "Provinsi Riau": LayerKAB_RIAU,
 
-                    "<span style='color: red'>FFMC</span>": LayerFDRS_ffmc,
+                    "FFMC": LayerFDRS_ffmc,
                     "DMC": LayerFDRS_dmc,
                     "DC": LayerFDRS_dc,
                     "FWI": LayerFDRS_fwi,
