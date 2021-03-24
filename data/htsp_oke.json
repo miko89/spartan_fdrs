@@ -1,0 +1,50 @@
+[
+    {
+        "Bujur": "8",
+        "Lintang": "JAWA",
+        "Kepercayaan": "DI YOGYAKARTA",
+        "Region": "SLEMAN",
+        "Provinsi": "PAKEM",
+        "Kabupaten": "SNPP",
+        "Kecamatan": "2021-03-24",
+        "Satelit": "01:03:08",
+        "Tanggal": "1125",
+        "Waktu": "pixel"
+    },
+    {
+        "Bujur": "8",
+        "Lintang": "JAWA",
+        "Kepercayaan": "JAWA BARAT",
+        "Region": "TASIKMALAYA",
+        "Provinsi": "CIPATUJAH",
+        "Kabupaten": "SNPP",
+        "Kecamatan": "2021-03-24",
+        "Satelit": "01:03:08",
+        "Tanggal": "1125",
+        "Waktu": "pixel"
+    },
+    {
+        "Bujur": "8",
+        "Lintang": "JAWA",
+        "Kepercayaan": "JAWA TENGAH",
+        "Region": "MAGELANG",
+        "Provinsi": "SRUMBUNG",
+        "Kabupaten": "SNPP",
+        "Kecamatan": "2021-03-24",
+        "Satelit": "01:03:08",
+        "Tanggal": "1125",
+        "Waktu": "pixel"
+    },
+    {
+        "Bujur": "8",
+        "Lintang": "SULAWESI",
+        "Kepercayaan": "SULAWESI TENGAH",
+        "Region": "MOROWALI",
+        "Provinsi": "BAHODOPI",
+        "Kabupaten": "SNPP",
+        "Kecamatan": "2021-03-24",
+        "Satelit": "01:03:08",
+        "Tanggal": "1125",
+        "Waktu": "pixel"
+    }
+]

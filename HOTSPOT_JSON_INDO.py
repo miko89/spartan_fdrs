@@ -35,7 +35,7 @@ print(df.head)
 
 file = 'F:/spartan_fdrs/data/htsp.csv'
 json_file = 'F:/spartan_fdrs/data/htsp.json'
-fieldnames = ("Bujur", "Lintang", "Kepercayaan", "Region", "Provinsi", "Kabupaten", "Kecamatan","Satelit", "Tanggal", "Waktu")
+fieldnames = ("Bujur", "Lintang")
 
         
 ##Read CSV File
@@ -53,7 +53,7 @@ print("Membaca File CSV")
 def convert_write_json(data, json_file):
     with open(json_file, "w") as f:
         f.write(json.dumps(data, sort_keys=False, indent=4, separators=(',', ': '))) 
-print("FINISH")
+print("FINISH Convert CSV to JSon File")
 
 
 read_CSV(file,json_file)

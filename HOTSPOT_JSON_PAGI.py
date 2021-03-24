@@ -11,9 +11,9 @@ path = os.path.join(cwd, "HOTSPOT_JSON_PAGI.py")
 
 
 #-----INPUT DATA 00-----#
-##tanggal_00 = "03"
-##bulan_00 = "08"	 	
-##tahun_00 = "2020"
+##tanggal_00 = "27"
+##bulan_00 = "02"	 	
+##tahun_00 = "2021"
 
 
 ##-----INPUT DATA 00-----#
