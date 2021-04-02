@@ -28,7 +28,7 @@ print(body.decode('iso-8859-1'))
 
 with open('visibility.txt', 'wb') as f:
     c = pycurl.Curl()
-    c.setopt(c.URL, 'http://aviation.bmkg.go.id/latest/metar.php?m=8&y=2020&i=wiii')
+    c.setopt(c.URL, 'http://aviation.bmkg.go.id/latest/metar.php?m=4&y=2021&i=wiii')
     c.setopt(c.WRITEDATA, f)
     c.perform()
     c.close()
