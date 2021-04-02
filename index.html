@@ -667,7 +667,8 @@
                 var map = L.map('map', {
                     maxZoom: 15,
                     minZoom: 4,
-                }).addTo(map).setView(center, 4)
+                    setView: (center, 4),
+                }).addTo(map)
 
                 
 // Peta OSM
