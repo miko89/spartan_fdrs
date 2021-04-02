@@ -683,7 +683,7 @@
                 var map = L.map('map', {
                     maxZoom: 15,
                     minZoom: 4,
-                }).setView(center, 5);
+                }).setView(center, 4);
 
 // Peta OSM
                 var OSM = L.tileLayer(
@@ -693,13 +693,13 @@
                 })
 // Peta MapBOX
                 var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-	                maxZoom: 17,
+	                maxZoom: 15,
 	                //attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
                 })
 
 // Peta Dark 
                 var Stadia_AlidadeSmoothDark = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
-	                maxZoom: 20,
+	                maxZoom: 15,
 	                //attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
                 }).addTo(map);
 
@@ -714,8 +714,8 @@
 	                //attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 	                subdomains: 'abcd',
                     FontSize:10,
-	                minZoom: 0,
-	                maxZoom: 18,
+	                minZoom: 4,
+	                maxZoom: 15,
                     zindex: 400,
 	                ext: 'png',
                     pane: 'labels'
@@ -725,8 +725,8 @@
                 var Stamen_TonerBackground = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-background/{z}/{x}/{y}{r}.{ext}', {
 	                //attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 	                subdomains: 'abcd',
-	                minZoom: 0,
-	                maxZoom: 20,
+	                minZoom: 4,
+	                maxZoom: 15,
 	                ext: 'png'
                 });
 
