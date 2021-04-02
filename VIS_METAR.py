@@ -19,7 +19,7 @@ tahun_now = (datetime.today() + timedelta(days=0)).strftime("%Y")
 #======================================================= PONTIANAK WIOO ====================================================
 with open('visibility_wioo.txt', 'wb') as f:
     c = pycurl.Curl()
-    c.setopt(c.URL, 'http://aviation.bmkg.go.id/latest/metar.php?m=2&y=2021&i=wioo')
+    c.setopt(c.URL, 'http://aviation.bmkg.go.id/latest/metar.php?m=4&y=2021&i=wioo')
     c.setopt(c.WRITEDATA, f)
     c.perform()
     c.close()
@@ -87,7 +87,7 @@ print("FINISH_PONTIANAK")
 #======================================================= PALANGKARAYA WAGG ====================================================
 with open('visibility_wagg.txt', 'wb') as f:
     c = pycurl.Curl()
-    c.setopt(c.URL, 'http://aviation.bmkg.go.id/latest/metar.php?m=2&y=2021&i=wagg')
+    c.setopt(c.URL, 'http://aviation.bmkg.go.id/latest/metar.php?m=4&y=2021&i=wagg')
     c.setopt(c.WRITEDATA, f)
     c.perform()
     c.close()
@@ -157,7 +157,7 @@ print("FINISH_PALANGKARAYA")
 #======================================================= JAMBI WIJJ ====================================================
 with open('visibility_wijj.txt', 'wb') as f:
     c = pycurl.Curl()
-    c.setopt(c.URL, 'http://aviation.bmkg.go.id/latest/metar.php?m=2&y=2021&i=wijj')
+    c.setopt(c.URL, 'http://aviation.bmkg.go.id/latest/metar.php?m=4&y=2021&i=wijj')
     c.setopt(c.WRITEDATA, f)
     c.perform()
     c.close()
@@ -229,7 +229,7 @@ print("FINISH_JAMBI")
 #======================================================= PEKANBARU WIBB ====================================================
 with open('visibility_wibb.txt', 'wb') as f:
     c = pycurl.Curl()
-    c.setopt(c.URL, 'http://aviation.bmkg.go.id/latest/metar.php?m=2&y=2021&i=wibb')
+    c.setopt(c.URL, 'http://aviation.bmkg.go.id/latest/metar.php?m=4&y=2021&i=wibb')
     c.setopt(c.WRITEDATA, f)
     c.perform()
     c.close()
@@ -299,7 +299,7 @@ print("FINISH_PEKANBARU")
 #======================================================= PALEMBANG WIPP ====================================================
 with open('visibility_wipp.txt', 'wb') as f:
     c = pycurl.Curl()
-    c.setopt(c.URL, 'http://aviation.bmkg.go.id/latest/metar.php?m=2&y=2021&i=wipp')
+    c.setopt(c.URL, 'http://aviation.bmkg.go.id/latest/metar.php?m=4&y=2021&i=wipp')
     c.setopt(c.WRITEDATA, f)
     c.perform()
     c.close()

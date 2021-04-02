@@ -26,7 +26,7 @@ tahun_now = (datetime.today() + timedelta(days=0)).strftime("%Y")
 
 
 
-df = pd.read_csv("F:/spartan_fdrs/data/titik_hotspot/"+tahun_00+""+bulan_00+""+tanggal_00+"/indonesia/hotspot_"+tahun_00+""+bulan_00+""+tanggal_00+"_indonesia.txt",delimiter='\t',header = None,names=["Bujur", "Lintang", "Kepercayaan", "Region", "Provinsi", "Kabupaten", "Kecamatan","Satelit", "Tanggal", "Waktu"])
+df = pd.read_csv("F:/spartan_fdrs/data/titik_hotspot/"+tahun_00+""+bulan_00+""+tanggal_00+"/indonesia/hotspot_"+tahun_00+""+bulan_00+""+tanggal_00+"_indonesia.txt",delimiter='\t',header = None,names=["Bujur", "Lintang", "Kepercayaan", "Region", "Provinsi", "Kabupaten", "Kecamatan", "Satelit", "Tanggal", "Waktu", "Radius", "Type"])
 df.drop(df.head(1).index,inplace=True)
 df.to_csv("F:/spartan_fdrs/data/htsp.csv", index=False)
 print(df.head)
@@ -35,7 +35,7 @@ print(df.head)
 
 file = 'F:/spartan_fdrs/data/htsp.csv'
 json_file = 'F:/spartan_fdrs/data/htsp.json'
-fieldnames = ("Bujur", "Lintang")
+fieldnames = ("Bujur", "Lintang", "Kepercayaan", "Region", "Provinsi", "Kabupaten", "Kecamatan", "Satelit", "Tanggal", "Waktu", "Radius", "Type")
 
         
 ##Read CSV File
