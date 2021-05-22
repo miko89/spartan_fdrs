@@ -156,8 +156,8 @@
         .keterangan {
             background: rgb(234, 235, 235);
             padding: 5px 0;
-            width: 890px;
-            height: 600px;
+            width: auto;
+            height: auto;
 
         }
 
@@ -165,8 +165,8 @@
             background: rgb(17, 17, 17);
             border-top: solid 1px;
             padding: 1px 0;
-            height: 100px;
-            width: 1350px;
+            height: auto;
+            width: auto;
         }
 
         /* .text-header {
@@ -260,7 +260,7 @@
             background-color: rgb(50, 51, 50);
             color: rgb(252, 249, 249);
             border: none;
-            padding: 2px 54px;
+            padding: auto;
             text-align: center;
             text-decoration: none;
             font-size: 14px;
@@ -470,7 +470,7 @@
 <body class>
     <!-- <div class="wrap"> -->
         <!-- <div class="header"> -->
-            <nav class="navbar navbar-light" style="background-color: #c5c900;">
+            <nav class="navbar navbar-light" style="background-color: #000000;">
                 <div class="container-fluid">
                   <a class="navbar-brand" href="#">
                     <img src="img/SPARTAN_LOGO.png" alt="" width="270" height="55" class="d-inline-block align-text-top">
@@ -498,8 +498,8 @@
                     <p class="text-slider"><b>Data Tanggal : <span id="Date00"></span></b> <br> Prakiraan Index FDRS H+
                         <span style='color: rgb(224, 20, 200)' id="demo"> </span>
                     </p>
-                    <input onchange='setImage(this)' type="range" min="0" max="7" value="0" step="1" id="myRange"
-                        class="slider" />
+                    <!-- <input onchange='setImage(this)' type="range" min="0" max="7" value="0" step="1" id="myRange"
+                        class="slider" /> -->
 
 
                     <!-- <img id='garis_slider' src='img/GARIS_SLIDER7.png' class="imageslider" /> -->
@@ -518,7 +518,7 @@
 
                 </div>
             </div>
-            <hr class="garis_bawah">
+            <!-- <hr class="garis_bawah"> -->
             <div class="sidebar">
                 <div class="dropdown">
                     <button onclick="myFunction()" class="dropbtn">GRAFIK INDEX FDRS</button>
@@ -554,14 +554,15 @@
             </div>
 
             <div class="keterangan">
-                <div class="row">
-                    <div class="col-xs-12"></div>
+
                 <br>
                 <h6 class="text-keterangan"><b>KETERANGAN INDEX FIRE DANGER RATING SYSTEM</b></h6>
                 <p class="text-keterangan">Penjelasan singkat tentang warna pada tingkatan disetiap index FDRS
                     (FFMC, DMC, DC, FWI, BUI, ISI)</p>
 
                 <div class="btn-group btn-group-justified">
+                    <div class="row">
+                        <div class="col-xs-12"></div>
                     <button onclick="myFunction()" class="button"><a class="KET_FFMC">FFMC</a></button>
                     <button onclick="myFunction()" class="button"><a class="KET_DMC">DMC</a></button>
                     <button onclick="myFunction()" class="button"><a class="KET_DC">DC</a></button>
@@ -569,6 +570,8 @@
                     <button onclick="myFunction()" class="button"><a class="KET_BUI">BUI</a></button>
                     <button onclick="myFunction()" class="button"><a class="KET_ISI">ISI</a></button>
                 </div>
+                </div>
+
                 <br>
                 <br>
                 <img id="change-imageKET" src="img/KET_FFMC.png" alt="FFMC_image" height="450" width="930"
@@ -590,35 +593,35 @@
             <div class="footer">
                 <p class="text-footer">&copy; Copyright Sub Bidang Peringatan Dini Cuaca. <img alt="Sipendekar"
                         src="img/LOGO_PDC_2.png" height="30" width="30" /></p>
-                    </div>
+
             </div>
 
             <!--===================================================== SCRIPT ==================================================================  -->
             <!--================================================= PETA INTERACTIVE ============================================================  -->
 
             <script>
-                var months = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
-                var myDays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];
-                var date = new Date();
-                var day = date.getDate()
-                var month = date.getMonth();
-                var thisDay = date.getDay(),
-                    thisDay = myDays[thisDay];
-                var yy = date.getYear();
-                var year = (yy < 1000) ? yy + 1900 : yy;
-                // document.getElementById('Tanggal').innerHTML=thisDay + ', ' + day + ' ' + months[month] + ' ' + year;
-                // document.getElementById('Tanggal').innerHTML= day + ' ' + months[month] + ' ' + year;
+                // var months = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+                // var myDays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];
+                // var date = new Date();
+                // var day = date.getDate()
+                // var month = date.getMonth();
+                // var thisDay = date.getDay(),
+                //     thisDay = myDays[thisDay];
+                // var yy = date.getYear();
+                // var year = (yy < 1000) ? yy + 1900 : yy;
+                // // document.getElementById('Tanggal').innerHTML=thisDay + ', ' + day + ' ' + months[month] + ' ' + year;
+                // // document.getElementById('Tanggal').innerHTML= day + ' ' + months[month] + ' ' + year;
 
-                var imgffmc = document.getElementById('img_ffmc');
-                var imgfwi = document.getElementById('img_fwi');
-                var imgisi = document.getElementById('img_isi');
-                var imgbui = document.getElementById('img_bui');
-                var imgdmc = document.getElementById('img_dmc');
-                var imgdc = document.getElementById('img_dc');
-                var slider = document.getElementById("myRange");
-                var output = document.getElementById("demo");
-                var date00 = document.getElementById("Date00")
-                date00.innerHTML = day + "/" + months[month] + "/" + year;
+                // var imgffmc = document.getElementById('img_ffmc');
+                // var imgfwi = document.getElementById('img_fwi');
+                // var imgisi = document.getElementById('img_isi');
+                // var imgbui = document.getElementById('img_bui');
+                // var imgdmc = document.getElementById('img_dmc');
+                // var imgdc = document.getElementById('img_dc');
+                // var slider = document.getElementById("myRange");
+                // var output = document.getElementById("demo");
+                // var date00 = document.getElementById("Date00")
+                // date00.innerHTML = day + "/" + months[month] + "/" + year;
 
                 // var date01 = document.getElementById("Date01")
                 // date01.innerHTML =  + 1 + "/" + months[month] + "/" + year
@@ -644,36 +647,36 @@
 
 
 
-                output.innerHTML = slider.value;
-                slider.oninput = function (e) {
-                    let value = parseInt(e.target.value);
-                    // if (value > 0) {
-                    //     date.innerHTML = day + value + " " + months[month] + " " + year;
-                    // }
+                // output.innerHTML = slider.value;
+                // slider.oninput = function (e) {
+                //     let value = parseInt(e.target.value);
+                //     // if (value > 0) {
+                //     //     date.innerHTML = day + value + " " + months[month] + " " + year;
+                //     // }
 
 
-                    // else {
+                //     // else {
 
-                    // }
+                //     // }
 
-                    output.innerHTML = this.value;
-                };
-                var img_array1 = ['img/ECMWF/39_asia_transparan_ffmc_00.png', 'img/ECMWF/39_asia_transparan_ffmc_01.png', 'img/ECMWF/39_asia_transparan_ffmc_02.png', 'img/ECMWF/39_asia_transparan_ffmc_03.png', 'img/ECMWF/39_asia_transparan_ffmc_04.png', 'img/ECMWF/39_asia_transparan_ffmc_05.png', 'img/ECMWF/39_asia_transparan_ffmc_06.png', 'img/ECMWF/39_asia_transparan_ffmc_07.png'];
-                var img_array2 = ['img/ECMWF/39_asia_transparan_fwi_00.png', 'img/ECMWF/39_asia_transparan_fwi_01.png', 'img/ECMWF/39_asia_transparan_fwi_02.png', 'img/ECMWF/39_asia_transparan_fwi_03.png', 'img/ECMWF/39_asia_transparan_fwi_04.png', 'img/ECMWF/39_asia_transparan_fwi_05.png', 'img/ECMWF/39_asia_transparan_fwi_06.png', 'img/ECMWF/39_asia_transparan_fwi_07.png'];
-                var img_array3 = ['img/ECMWF/39_asia_transparan_bui_00.png', 'img/ECMWF/39_asia_transparan_bui_01.png', 'img/ECMWF/39_asia_transparan_bui_02.png', 'img/ECMWF/39_asia_transparan_bui_03.png', 'img/ECMWF/39_asia_transparan_bui_04.png', 'img/ECMWF/39_asia_transparan_bui_05.png', 'img/ECMWF/39_asia_transparan_bui_06.png', 'img/ECMWF/39_asia_transparan_bui_07.png'];
-                var img_array4 = ['img/ECMWF/39_asia_transparan_isi_00.png', 'img/ECMWF/39_asia_transparan_isi_01.png', 'img/ECMWF/39_asia_transparan_isi_02.png', 'img/ECMWF/39_asia_transparan_isi_03.png', 'img/ECMWF/39_asia_transparan_isi_04.png', 'img/ECMWF/39_asia_transparan_isi_05.png', 'img/ECMWF/39_asia_transparan_isi_06.png', 'img/ECMWF/39_asia_transparan_isi_07.png'];
-                var img_array5 = ['img/ECMWF/39_asia_transparan_dmc_00.png', 'img/ECMWF/39_asia_transparan_dmc_01.png', 'img/ECMWF/39_asia_transparan_dmc_02.png', 'img/ECMWF/39_asia_transparan_dmc_03.png', 'img/ECMWF/39_asia_transparan_dmc_04.png', 'img/ECMWF/39_asia_transparan_dmc_05.png', 'img/ECMWF/39_asia_transparan_dmc_06.png', 'img/ECMWF/39_asia_transparan_dmc_07.png'];
-                var img_array6 = ['img/ECMWF/39_asia_transparan_dc_00.png', 'img/ECMWF/39_asia_transparan_dc_01.png', 'img/ECMWF/39_asia_transparan_dc_02.png', 'img/ECMWF/39_asia_transparan_dc_03.png', 'img/ECMWF/39_asia_transparan_dc_04.png', 'img/ECMWF/39_asia_transparan_dc_05.png', 'img/ECMWF/39_asia_transparan_dc_06.png', 'img/ECMWF/39_asia_transparan_dc_07.png'];
+                //     output.innerHTML = this.value;
+                // };
+                // var img_array1 = ['img/ECMWF/39_asia_transparan_ffmc_00.png', 'img/ECMWF/39_asia_transparan_ffmc_01.png', 'img/ECMWF/39_asia_transparan_ffmc_02.png', 'img/ECMWF/39_asia_transparan_ffmc_03.png', 'img/ECMWF/39_asia_transparan_ffmc_04.png', 'img/ECMWF/39_asia_transparan_ffmc_05.png', 'img/ECMWF/39_asia_transparan_ffmc_06.png', 'img/ECMWF/39_asia_transparan_ffmc_07.png'];
+                // var img_array2 = ['img/ECMWF/39_asia_transparan_fwi_00.png', 'img/ECMWF/39_asia_transparan_fwi_01.png', 'img/ECMWF/39_asia_transparan_fwi_02.png', 'img/ECMWF/39_asia_transparan_fwi_03.png', 'img/ECMWF/39_asia_transparan_fwi_04.png', 'img/ECMWF/39_asia_transparan_fwi_05.png', 'img/ECMWF/39_asia_transparan_fwi_06.png', 'img/ECMWF/39_asia_transparan_fwi_07.png'];
+                // var img_array3 = ['img/ECMWF/39_asia_transparan_bui_00.png', 'img/ECMWF/39_asia_transparan_bui_01.png', 'img/ECMWF/39_asia_transparan_bui_02.png', 'img/ECMWF/39_asia_transparan_bui_03.png', 'img/ECMWF/39_asia_transparan_bui_04.png', 'img/ECMWF/39_asia_transparan_bui_05.png', 'img/ECMWF/39_asia_transparan_bui_06.png', 'img/ECMWF/39_asia_transparan_bui_07.png'];
+                // var img_array4 = ['img/ECMWF/39_asia_transparan_isi_00.png', 'img/ECMWF/39_asia_transparan_isi_01.png', 'img/ECMWF/39_asia_transparan_isi_02.png', 'img/ECMWF/39_asia_transparan_isi_03.png', 'img/ECMWF/39_asia_transparan_isi_04.png', 'img/ECMWF/39_asia_transparan_isi_05.png', 'img/ECMWF/39_asia_transparan_isi_06.png', 'img/ECMWF/39_asia_transparan_isi_07.png'];
+                // var img_array5 = ['img/ECMWF/39_asia_transparan_dmc_00.png', 'img/ECMWF/39_asia_transparan_dmc_01.png', 'img/ECMWF/39_asia_transparan_dmc_02.png', 'img/ECMWF/39_asia_transparan_dmc_03.png', 'img/ECMWF/39_asia_transparan_dmc_04.png', 'img/ECMWF/39_asia_transparan_dmc_05.png', 'img/ECMWF/39_asia_transparan_dmc_06.png', 'img/ECMWF/39_asia_transparan_dmc_07.png'];
+                // var img_array6 = ['img/ECMWF/39_asia_transparan_dc_00.png', 'img/ECMWF/39_asia_transparan_dc_01.png', 'img/ECMWF/39_asia_transparan_dc_02.png', 'img/ECMWF/39_asia_transparan_dc_03.png', 'img/ECMWF/39_asia_transparan_dc_04.png', 'img/ECMWF/39_asia_transparan_dc_05.png', 'img/ECMWF/39_asia_transparan_dc_06.png', 'img/ECMWF/39_asia_transparan_dc_07.png'];
 
-                function setImage(obj) {
-                    var value = obj.value;
-                    imgffmc.src = img_array1[value];
-                    imgfwi.src = img_array2[value];
-                    imgbui.src = img_array3[value];
-                    imgisi.src = img_array4[value];
-                    imgdmc.src = img_array5[value];
-                    imgdc.src = img_array6[value];
-                }
+                // function setImage(obj) {
+                //     var value = obj.value;
+                //     imgffmc.src = img_array1[value];
+                //     imgfwi.src = img_array2[value];
+                //     imgbui.src = img_array3[value];
+                //     imgisi.src = img_array4[value];
+                //     imgdmc.src = img_array5[value];
+                //     imgdc.src = img_array6[value];
+                // }
 
                 //================================================= BASE MAP ============================================================  -->
 
