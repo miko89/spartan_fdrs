@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 45 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <use xlink:href="#_Image1" x="1" y="0" width="41.801px" height="10px" transform="matrix(0.995267,0,0,1,0,0)"/>
+    <g transform="matrix(0.0734123,0,0,0.0734123,-1.19362,-3.06346)">
+        <g id="rect1498-4" transform="matrix(0.222876,0,0,0.222876,-252.316,52.0365)">
+            <rect x="1796.17" y="379.441" width="339.642" height="38.903" style="fill:rgb(0,85,212);"/>
+        </g>
+        <g id="rect1519-9" transform="matrix(0.222876,0,0,0.222876,-252.316,52.0365)">
+            <rect x="2135.81" y="379.441" width="579.002" height="38.903" style="fill:rgb(0,212,0);"/>
+        </g>
+        <g id="rect1521-8" transform="matrix(0.17459,0,0,0.222876,-121.229,52.0365)">
+            <rect x="2714.81" y="379.441" width="564.602" height="38.903" style="fill:rgb(255,204,0);"/>
+        </g>
+        <g id="rect1523-6" transform="matrix(0.273813,0,0,0.222876,-446.622,52.0365)">
+            <rect x="3279.41" y="379.441" width="328.977" height="38.903" style="fill:rgb(255,0,0);"/>
+        </g>
+        <g transform="matrix(1,0,0,1,20,0)">
+            <g id="circle942" transform="matrix(0.611042,0,0,0.611042,-135.33,61.0147)">
+                <circle cx="353.04" cy="79.866" r="76.835" style="fill:rgb(51,51,51);"/>
+            </g>
+            <g id="path927" transform="matrix(0.611042,0,0,0.611042,-135.33,61.0147)">
+                <circle cx="353.04" cy="79.866" r="69.275" style="fill:rgb(204,204,204);"/>
+            </g>
+            <g id="circle931" transform="matrix(0.611042,0,0,0.611042,-135.33,61.0147)">
+                <circle cx="353.04" cy="79.866" r="61.792" style="fill:rgb(26,26,26);"/>
+            </g>
+            <g id="rect852" transform="matrix(0.611042,0,0,0.611042,-135.33,61.0147)">
+                <path d="M377.52,63.323L381.962,59.819C386.071,64.602 389.637,78.458 386.824,91.134L382.023,87.872L380.988,77.387C375.726,76.211 364.459,71.487 361.845,72.056L361.247,78.341C362.182,78.338 375.514,84.526 375.514,84.526C375.514,84.526 385.888,111.23 389.2,119.514C385.531,122.376 372.296,117.569 364.443,114.123C359.572,111.985 361.473,106.051 354.419,97.617C352.243,98.303 362.329,116.596 360.359,116.651C342.637,101.489 317.033,115.743 318.069,115.014C319.807,113.936 327.547,109.749 329.737,103.041C332.478,94.649 329.454,83.172 328.628,78.785C327.728,48.567 364.555,36.825 377.52,63.323Z" style="fill:rgb(77,77,77);fill-rule:nonzero;"/>
+            </g>
+            <g id="path874" transform="matrix(0.589477,-0.376082,0.42333,0.621378,-27.356,71.8679)">
+                <path d="M87.4,77.883C74.05,82.866 64.822,90.203 62.664,100.154C60.389,110.645 59.17,115.331 54.386,122.382C65.599,118.255 67.923,113.371 72.378,104.174C76.015,97.272 82.296,92.024 89.877,89.555C92.061,88.854 94.32,88.394 96.61,88.184L95.037,76.246C92.445,76.567 89.889,77.115 87.4,77.883Z" style="fill:rgb(0,85,212);fill-rule:nonzero;"/>
+            </g>
+            <g id="path876" transform="matrix(0.589477,-0.376082,0.42333,0.621378,-27.356,71.8679)">
+                <path d="M88.296,77.493C81.453,79.426 75.203,83.048 70.124,88.026L78.346,96.416C81.503,93.418 85.274,91.142 89.396,89.744C96.36,87.416 103.941,87.718 110.698,90.592L115.308,78.816C106.69,75.442 97.202,74.978 88.296,77.493Z" style="fill:rgb(0,212,0);fill-rule:nonzero;"/>
+            </g>
+            <g id="path878" transform="matrix(0.589477,-0.376082,0.42333,0.621378,-27.356,71.8679)">
+                <path d="M84.923,78.591L89.142,89.839C89.227,89.807 89.312,89.776 89.396,89.744C99.418,86.393 110.497,88.561 118.515,95.443L126.672,85.451C114.982,75.91 99.052,73.292 84.923,78.591Z" style="fill:rgb(255,204,0);fill-rule:nonzero;"/>
+            </g>
+            <g id="path880" transform="matrix(0.589477,-0.376082,0.42333,0.621378,-27.356,71.8679)">
+                <path d="M108.463,76.763L105.914,89.03C114.35,91.031 121.511,96.576 125.561,104.242L138.429,96.926C132.458,86.016 120.64,79.293 108.463,76.763Z" style="fill:rgb(255,0,0);fill-rule:nonzero;"/>
+            </g>
+            <g id="rect1266" transform="matrix(0.611042,0,0,0.611042,-135.33,61.0147)">
+                <path d="M377.365,63.241C377.277,63.803 377.289,64.313 376.642,64.613C373.362,66.133 363.548,64.593 358.955,64.288C368.84,64.556 373.874,64.33 377.365,63.241Z" style="fill:rgb(128,128,128);fill-rule:nonzero;"/>
+            </g>
+            <g id="path1362" transform="matrix(0.611042,0,0,0.611042,-135.33,61.0147)">
+                <path d="M326.108,79.566C321.167,61.912 346.815,35.558 369.765,49.85C349.037,31.047 318.727,58.508 323.728,77.21L326.108,79.566Z" style="fill:rgb(77,77,77);fill-rule:nonzero;"/>
+            </g>
+            <g id="rect861" transform="matrix(0.340005,-0.0426352,0.0426352,0.340005,37.7636,52.6383)">
+                <path d="M66.682,141.523C61.9,161.073 70.155,169.556 77.715,170.114C64.865,163.319 69.035,143.915 73.468,132.419C73.314,157.846 103.911,163.716 99.496,152.911C95.636,144.146 60.829,123.403 81.197,108.343C81.197,108.343 70.348,120.105 100.423,131.709C134.283,144.774 127.448,174.196 115.926,183.259C93.604,200.818 50.343,182.367 66.682,141.523Z" style="fill:rgb(255,0,0);fill-rule:nonzero;"/>
+            </g>
+            <g id="path944" transform="matrix(0.340005,-0.0426352,0.0426352,0.340005,37.7636,52.6383)">
+                <path d="M119.644,154.397C128.775,158.387 122.864,178.081 112.511,184.289C102.158,190.496 88.658,190.216 76.458,177.654C76.458,177.654 94.03,194.428 108.35,178.599C116.449,169.648 108.524,149.538 119.644,154.397Z" style="fill:rgb(255,204,0);fill-opacity:0.55;fill-rule:nonzero;"/>
+            </g>
+        </g>
+        <g transform="matrix(0.497513,0,0,0.497513,273.392,-308.29)">
+            <text x="-242.253px" y="875.432px" style="font-family:'Feels-Like-Nostalgia', 'Feels Like Nostalgia';font-size:30px;fill:rgb(248,248,248);">Sistem Peringatan Kebakaran Hutan dan Lahan</text>
+        </g>
+        <g transform="matrix(3.1312,0,0,3.1312,-966.239,-472.255)">
+            <text x="356.94px" y="185.368px" style="font-family:'MontserratSubrayada-Bold', 'Montserrat Subrayada';font-weight:700;font-size:14.925px;fill:rgb(248,248,248);">SP<tspan x="375.955px 387.074px 397.716px 406.029px " y="185.368px 185.368px 185.368px 185.368px ">ARTA</tspan>N</text>
+        </g>
+    </g>
+    <defs>
+        <image id="_Image1" width="42px" height="10px" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAKCAYAAADCb8xtAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABZUlEQVQ4jcWTMW7CQBBF/84ua8nGRggbkBDpEEUqLpAih0DKedIkJ6DgArlFpJyAI5BAg4TkwrAs2OtJkRiFNKmCXz0aPc2fLyaTSScIAhGGITzPAxHh2gghAABEBK01oig6zmaz7GJmNBo53/cpjmNEUQQpZa2ijUYDYRgijuOPfr8/T5LkaTqdFup0OoGIwMxotVrwff/qohVSSnieh3a7jV6vd6O1ftztdrcAHsRgMHBaa+p0OhgOhwiCoDbRKvokSTAej9FsNrFer2GtvVdlWcI5B2MMttstsiz7e+M/UMUvpUSaprDWotvtYrPZwBhzp5gZzIyiKHA4HFAURS2iP9nv9zDGYLlcwloLZoZiZpRliTzPkWVZLa3/jRACaZqCiKp3eFPMDOcc8jyHc65uRwBfopWkUuplsVi8KgDniwohzr9SJ9+S71LKORE9A4CSUnaZ+WzHzPUZ4lyq42q1umj1JwF/iUFpbUPyAAAAAElFTkSuQmCC"/>
+    </defs>
+</svg>
