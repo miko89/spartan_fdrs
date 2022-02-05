@@ -1,57 +1,57 @@
 [
     {
         "": "0",
-        "Tanggal": "31-08-2021",
+        "Tanggal": "31-01-2022",
         "Waktu": "23:30:00Z\t",
         "Lat": "-2.2266666666666666",
         "Long": "113.94388888888888",
         "ICAO": "Stamet Tjilik Riwut - Palangkaraya (WAGG)",
-        "Angin": "04001KT",
-        "Visibility": "7000",
-        "Cuaca": "BKN009"
+        "Angin": "12001KT",
+        "Visibility": "8000",
+        "Cuaca": "FEW012"
     },
     {
         "": "1",
-        "Tanggal": "31-08-2021",
+        "Tanggal": "31-01-2022",
         "Waktu": "23:30:00Z\t",
         "Lat": "0.46",
         "Long": "101.44388888888888",
         "ICAO": "Stamet I Sultan Syarif Kasim II - Pekanbaru (WIBB)",
-        "Angin": "20004KT",
-        "Visibility": "8000",
-        "Cuaca": "SCT008"
+        "Angin": "00000KT",
+        "Visibility": "4000",
+        "Cuaca": "TSRA"
     },
     {
         "": "2",
-        "Tanggal": "31-08-2021",
-        "Waktu": "23:30:00Z\t",
+        "Tanggal": "31-01-2022",
+        "Waktu": "21:30:00Z\t",
         "Lat": "-1.630466",
         "Long": "103.642847",
         "ICAO": "Stamet I Sultan Thaha - Jambi (WIJJ)",
-        "Angin": "26004KT",
-        "Visibility": "4600",
+        "Angin": "13001KT",
+        "Visibility": "1900",
         "Cuaca": "BR"
     },
     {
         "": "3",
-        "Tanggal": "31-08-2021",
-        "Waktu": "23:30:00Z\t",
+        "Tanggal": "31-01-2022",
+        "Waktu": "21:00:00Z\t",
         "Lat": "-0.14888888888888888",
         "Long": "109.4027777777778",
         "ICAO": "Stamet I Supadio - Pontianak (WIOO)",
-        "Angin": "14004KT",
-        "Visibility": "7000",
-        "Cuaca": "SCT013"
+        "Angin": "AUTO",
+        "Visibility": "01001KT",
+        "Cuaca": "800"
     },
     {
         "": "4",
-        "Tanggal": "31-08-2021",
+        "Tanggal": "31-01-2022",
         "Waktu": "23:30:00Z\t",
         "Lat": "-2.8977777777777787",
         "Long": "104.70083333333334",
         "ICAO": "Sultan Mahmud Badaruddin II - Palembang (WIPP)",
-        "Angin": "15004KT",
-        "Visibility": "5000",
-        "Cuaca": "-RA"
+        "Angin": "32002KT",
+        "Visibility": "400",
+        "Cuaca": "R11/0200N"
     }
 ]
