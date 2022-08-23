@@ -19,7 +19,7 @@ tahun_now = (datetime.today() + timedelta(days=0)).strftime("%Y")
 #======================================================= PONTIANAK WIOO ====================================================
 with open('visibility_wioo.txt', 'wb') as f:
     c = pycurl.Curl()
-    c.setopt(c.URL, 'http://aviation.bmkg.go.id/latest/metar.php?m=6&y=2022&i=wioo')
+    c.setopt(c.URL, 'http://aviation.bmkg.go.id/latest/metar.php?m=8&y=2022&i=wioo')
     c.setopt(c.WRITEDATA, f)
     c.perform()
     c.close()
@@ -29,10 +29,10 @@ df = pd.read_csv("F:visibility_wioo.txt",delimiter=' ',header =None,names=["Tang
 ##df.drop(df.head(1).index,inplace=True)
 
 df.drop(["SAID31","STATION", "UTC", "SANDI", "CLOUD1", "CLOUD12", "SUHU", "TEKANAN", "NOSIG/TEMPO", "FM/TL", "VIS", "WW", "CLD1", "CLD2"], axis=1, inplace=True)
-df.to_csv("F:/spartan_fdrs/data/visibility_wioo.csv", index=False)
+df.to_csv("F:/project_web/spartan_fdrs/data/visibility_wioo.csv", index=False)
 print(df.drop)
 
-df = pd.read_csv("F:/spartan_fdrs/data/visibility_wioo.csv") 
+df = pd.read_csv("F:/project_web/spartan_fdrs/data/visibility_wioo.csv") 
 # displying  dataframe - Output 1 
 df.head() 
   
@@ -43,43 +43,43 @@ df.insert(3, "Long", "109.40277777777779")
 # displaying data frame again - Output 2 
 df.head() 
 
-df.to_csv("F:/spartan_fdrs/data/visibility_wioo.csv", index=False)
+df.to_csv("F:/project_web/spartan_fdrs/data/visibility_wioo.csv", index=False)
 
 
 #Input the last Data
-top = pd.read_csv("F:/spartan_fdrs/data/visibility_wioo.csv", nrows=1)
+top = pd.read_csv("F:/project_web/spartan_fdrs/data/visibility_wioo.csv", nrows=1)
 headers = top.columns.values
 
-with open("F:/spartan_fdrs/data/visibility_wioo.csv", "r") as f, open("F:/spartan_fdrs/data/visibility/vis_last_wioo.csv","w") as g:
+with open("F:/project_web/spartan_fdrs/data/visibility_wioo.csv", "r") as f, open("F:/spartan_fdrs/data/visibility/vis_last_wioo.csv","w") as g:
     last_line = f.readlines()[-1].strip().split(",")
     c = csv.writer(g)
     c.writerow(headers)
     c.writerow(last_line)
 
-bottom = pd.read_csv("F:/spartan_fdrs/data/visibility/vis_last_wioo.csv")
+bottom = pd.read_csv("F:/project_web/spartan_fdrs/data/visibility/vis_last_wioo.csv")
 concatenated = pd.concat([bottom])
 concatenated.reset_index(inplace=True, drop=True)
 print (concatenated)
 
 #Change to the Date
-df = pd.read_csv("F:/spartan_fdrs/data/visibility/vis_last_wioo.csv")
+df = pd.read_csv("F:/project_web/spartan_fdrs/data/visibility/vis_last_wioo.csv")
 date = []
 for d in df["Tanggal"]:
     d = d.replace('/', '-')
     date.append(d)
 df["Tanggal"] = date
 print (date)
-df.to_csv("F:/spartan_fdrs/data/visibility/vis_last_wioo.csv", index=False)
+df.to_csv("F:/project_web/spartan_fdrs/data/visibility/vis_last_wioo.csv", index=False)
 
 #Change to the ICAO
-df = pd.read_csv("F:/spartan_fdrs/data/visibility/vis_last_wioo.csv")
+df = pd.read_csv("F:/project_web/spartan_fdrs/data/visibility/vis_last_wioo.csv")
 station = []
 for d in df["ICAO"]:
     d = d.replace('WIOO', 'Stamet I Supadio - Pontianak (WIOO)')
     station.append(d)
 df["ICAO"] = station
 print (station)
-df.to_csv("F:/spartan_fdrs/data/visibility/vis_last_wioo.csv", index=False)
+df.to_csv("F:/project_web/spartan_fdrs/data/visibility/vis_last_wioo.csv", index=False)
 
 
 print("FINISH_PONTIANAK")
@@ -97,10 +97,10 @@ df = pd.read_csv("F:visibility_wagg.txt",delimiter=' ',header =None,names=["Tang
 ##df.drop(df.head(1).index,inplace=True)
 
 df.drop(["SAID31","STATION", "UTC", "SANDI", "CLOUD1", "CLOUD12", "SUHU", "TEKANAN", "NOSIG/TEMPO", "FM/TL", "VIS", "WW", "CLD1", "CLD2"], axis=1, inplace=True)
-df.to_csv("F:/spartan_fdrs/data/visibility_wagg.csv", index=False)
+df.to_csv("F:/project_web/spartan_fdrs/data/visibility_wagg.csv", index=False)
 print(df.drop)
 
-df = pd.read_csv("F:/spartan_fdrs/data/visibility_wagg.csv") 
+df = pd.read_csv("F:/project_web/spartan_fdrs/data/visibility_wagg.csv") 
 # displying  dataframe - Output 1 
 df.head() 
   
@@ -111,18 +111,18 @@ df.insert(3, "Long", "113.94388888888889")
 # displaying data frame again - Output 2 
 df.head() 
 
-df.to_csv("F:/spartan_fdrs/data/visibility_wagg.csv", index=False)
+df.to_csv("F:/project_web/spartan_fdrs/data/visibility_wagg.csv", index=False)
 
-top = pd.read_csv("F:/spartan_fdrs/data/visibility_wagg.csv", nrows=1)
+top = pd.read_csv("F:/project_web/spartan_fdrs/data/visibility_wagg.csv", nrows=1)
 headers = top.columns.values
 
-with open("F:/spartan_fdrs/data/visibility_wagg.csv", "r") as f, open("F:/spartan_fdrs/data/visibility/vis_last_wagg.csv","w") as g:
+with open("F:/project_web/spartan_fdrs/data/visibility_wagg.csv", "r") as f, open("F:/spartan_fdrs/data/visibility/vis_last_wagg.csv","w") as g:
     last_line = f.readlines()[-1].strip().split(",")
     c = csv.writer(g)
     c.writerow(headers)
     c.writerow(last_line)
 
-bottom = pd.read_csv("F:/spartan_fdrs/data/visibility/vis_last_wagg.csv")
+bottom = pd.read_csv("F:/project_web/spartan_fdrs/data/visibility/vis_last_wagg.csv")
 concatenated = pd.concat([bottom])
 concatenated.reset_index(inplace=True, drop=True)
 
@@ -130,25 +130,25 @@ print (concatenated)
 
 
 #Change to the Date
-df = pd.read_csv("F:/spartan_fdrs/data/visibility/vis_last_wagg.csv")
+df = pd.read_csv("F:/project_web/spartan_fdrs/data/visibility/vis_last_wagg.csv")
 date = []
 for d in df["Tanggal"]:
     d = d.replace('/', '-')
     date.append(d)
 df["Tanggal"] = date
 print (date)
-df.to_csv("F:/spartan_fdrs/data/visibility/vis_last_wagg.csv", index=False)
+df.to_csv("F:/project_web/spartan_fdrs/data/visibility/vis_last_wagg.csv", index=False)
 
 
 #Change to the ICAO
-df = pd.read_csv("F:/spartan_fdrs/data/visibility/vis_last_wagg.csv")
+df = pd.read_csv("F:/project_web/spartan_fdrs/data/visibility/vis_last_wagg.csv")
 station = []
 for d in df["ICAO"]:
     d = d.replace('WAGG', 'Stamet Tjilik Riwut - Palangkaraya (WAGG)')
     station.append(d)
 df["ICAO"] = station
 print (station)
-df.to_csv("F:/spartan_fdrs/data/visibility/vis_last_wagg.csv", index=False)
+df.to_csv("F:/project_web/spartan_fdrs/data/visibility/vis_last_wagg.csv", index=False)
 
 
 print("FINISH_PALANGKARAYA")
@@ -167,10 +167,10 @@ df = pd.read_csv("F:visibility_wijj.txt",delimiter=' ',header =None,names=["Tang
 ##df.drop(df.head(1).index,inplace=True)
 
 df.drop(["SAID31","STATION", "UTC", "SANDI", "CLOUD1", "CLOUD12", "SUHU", "TEKANAN", "NOSIG/TEMPO", "FM/TL", "VIS", "WW", "CLD1", "CLD2"], axis=1, inplace=True)
-df.to_csv("F:/spartan_fdrs/data/visibility_wijj.csv", index=False)
+df.to_csv("F:/project_web/spartan_fdrs/data/visibility_wijj.csv", index=False)
 print(df.drop)
 
-df = pd.read_csv("F:/spartan_fdrs/data/visibility_wijj.csv") 
+df = pd.read_csv("F:/project_web/spartan_fdrs/data/visibility_wijj.csv") 
 # displying  dataframe - Output 1 
 df.head() 
   
@@ -181,43 +181,43 @@ df.insert(3, "Long", "103.642847")
 # displaying data frame again - Output 2 
 df.head() 
 
-df.to_csv("F:/spartan_fdrs/data/visibility_wijj.csv", index=False)
+df.to_csv("F:/project_web/spartan_fdrs/data/visibility_wijj.csv", index=False)
 
-top = pd.read_csv("F:/spartan_fdrs/data/visibility_wijj.csv", nrows=1)
+top = pd.read_csv("F:/project_web/spartan_fdrs/data/visibility_wijj.csv", nrows=1)
 headers = top.columns.values
 
-with open("F:/spartan_fdrs/data/visibility_wijj.csv", "r") as f, open("F:/spartan_fdrs/data/visibility/vis_last_wijj.csv","w") as g:
+with open("F:/project_web/spartan_fdrs/data/visibility_wijj.csv", "r") as f, open("F:/spartan_fdrs/data/visibility/vis_last_wijj.csv","w") as g:
     last_line = f.readlines()[-1].strip().split(",")
     c = csv.writer(g)
     c.writerow(headers)
     c.writerow(last_line)
 
-bottom = pd.read_csv("F:/spartan_fdrs/data/visibility/vis_last_wijj.csv")
+bottom = pd.read_csv("F:/project_web/spartan_fdrs/data/visibility/vis_last_wijj.csv")
 concatenated = pd.concat([bottom])
 concatenated.reset_index(inplace=True, drop=True)
 
 print (concatenated)
 
 #Change to the Date
-df = pd.read_csv("F:/spartan_fdrs/data/visibility/vis_last_wijj.csv")
+df = pd.read_csv("F:/project_web/spartan_fdrs/data/visibility/vis_last_wijj.csv")
 date = []
 for d in df["Tanggal"]:
     d = d.replace('/', '-')
     date.append(d)
 df["Tanggal"] = date
 print (date)
-df.to_csv("F:/spartan_fdrs/data/visibility/vis_last_wijj.csv", index=False)
+df.to_csv("F:/project_web/spartan_fdrs/data/visibility/vis_last_wijj.csv", index=False)
 
 
 #Change to the ICAO
-df = pd.read_csv("F:/spartan_fdrs/data/visibility/vis_last_wijj.csv")
+df = pd.read_csv("F:/project_web/spartan_fdrs/data/visibility/vis_last_wijj.csv")
 station = []
 for d in df["ICAO"]:
     d = d.replace('WIJJ', 'Stamet I Sultan Thaha - Jambi (WIJJ)')
     station.append(d)
 df["ICAO"] = station
 print (station)
-df.to_csv("F:/spartan_fdrs/data/visibility/vis_last_wijj.csv", index=False)
+df.to_csv("F:/project_web/spartan_fdrs/data/visibility/vis_last_wijj.csv", index=False)
 
 
 
@@ -239,10 +239,10 @@ df = pd.read_csv("F:visibility_wibb.txt",delimiter=' ',header =None,names=["Tang
 ##df.drop(df.head(1).index,inplace=True)
 
 df.drop(["SAID31","STATION", "UTC", "SANDI", "CLOUD1", "CLOUD12", "SUHU", "TEKANAN", "NOSIG/TEMPO", "FM/TL", "VIS", "WW", "CLD1", "CLD2"], axis=1, inplace=True)
-df.to_csv("F:/spartan_fdrs/data/visibility_wibb.csv", index=False)
+df.to_csv("F:/project_web/spartan_fdrs/data/visibility_wibb.csv", index=False)
 print(df.drop)
 
-df = pd.read_csv("F:/spartan_fdrs/data/visibility_wibb.csv") 
+df = pd.read_csv("F:/project_web/spartan_fdrs/data/visibility_wibb.csv") 
 # displying  dataframe - Output 1 
 df.head() 
   
@@ -253,18 +253,18 @@ df.insert(3, "Long", "101.44388888888889")
 # displaying data frame again - Output 2 
 df.head() 
 
-df.to_csv("F:/spartan_fdrs/data/visibility_wibb.csv", index=False)
+df.to_csv("F:/project_web/spartan_fdrs/data/visibility_wibb.csv", index=False)
 
-top = pd.read_csv("F:/spartan_fdrs/data/visibility_wibb.csv", nrows=1)
+top = pd.read_csv("F:/project_web/spartan_fdrs/data/visibility_wibb.csv", nrows=1)
 headers = top.columns.values
 
-with open("F:/spartan_fdrs/data/visibility_wibb.csv", "r") as f, open("F:/spartan_fdrs/data/visibility/vis_last_wibb.csv","w") as g:
+with open("F:/project_web/spartan_fdrs/data/visibility_wibb.csv", "r") as f, open("F:/spartan_fdrs/data/visibility/vis_last_wibb.csv","w") as g:
     last_line = f.readlines()[-1].strip().split(",")
     c = csv.writer(g)
     c.writerow(headers)
     c.writerow(last_line)
 
-bottom = pd.read_csv("F:/spartan_fdrs/data/visibility/vis_last_wibb.csv")
+bottom = pd.read_csv("F:/project_web/spartan_fdrs/data/visibility/vis_last_wibb.csv")
 concatenated = pd.concat([bottom])
 concatenated.reset_index(inplace=True, drop=True)
 
@@ -272,25 +272,25 @@ print (concatenated)
 
 
 #Change to the Date
-df = pd.read_csv("F:/spartan_fdrs/data/visibility/vis_last_wibb.csv")
+df = pd.read_csv("F:/project_web/spartan_fdrs/data/visibility/vis_last_wibb.csv")
 date = []
 for d in df["Tanggal"]:
     d = d.replace('/', '-')
     date.append(d)
 df["Tanggal"] = date
 print (date)
-df.to_csv("F:/spartan_fdrs/data/visibility/vis_last_wibb.csv", index=False)
+df.to_csv("F:/project_web/spartan_fdrs/data/visibility/vis_last_wibb.csv", index=False)
 
 
 #Change to the ICAO
-df = pd.read_csv("F:/spartan_fdrs/data/visibility/vis_last_wibb.csv")
+df = pd.read_csv("F:/project_web/spartan_fdrs/data/visibility/vis_last_wibb.csv")
 station = []
 for d in df["ICAO"]:
     d = d.replace('WIBB', 'Stamet I Sultan Syarif Kasim II - Pekanbaru (WIBB)')
     station.append(d)
 df["ICAO"] = station
 print (station)
-df.to_csv("F:/spartan_fdrs/data/visibility/vis_last_wibb.csv", index=False)
+df.to_csv("F:/project_web/spartan_fdrs/data/visibility/vis_last_wibb.csv", index=False)
 
 
 print("FINISH_PEKANBARU")
@@ -309,10 +309,10 @@ df = pd.read_csv("F:visibility_wipp.txt",delimiter=' ',header =None,names=["Tang
 ##df.drop(df.head(1).index,inplace=True)
 
 df.drop(["SAID31","STATION", "UTC", "SANDI", "CLOUD1", "CLOUD12", "SUHU", "TEKANAN", "NOSIG/TEMPO", "FM/TL", "VIS", "WW", "CLD1", "CLD2"], axis=1, inplace=True)
-df.to_csv("F:/spartan_fdrs/data/visibility_wipp.csv", index=False)
+df.to_csv("F:/project_web/spartan_fdrs/data/visibility_wipp.csv", index=False)
 print(df.drop)
 
-df = pd.read_csv("F:/spartan_fdrs/data/visibility_wipp.csv") 
+df = pd.read_csv("F:/project_web/spartan_fdrs/data/visibility_wipp.csv") 
 # displying  dataframe - Output 1 
 df.head() 
   
@@ -323,18 +323,18 @@ df.insert(3, "Long", "104.70083333333334")
 # displaying data frame again - Output 2 
 df.head() 
 
-df.to_csv("F:/spartan_fdrs/data/visibility_wipp.csv", index=False)
+df.to_csv("F:/project_web/spartan_fdrs/data/visibility_wipp.csv", index=False)
 
-top = pd.read_csv("F:/spartan_fdrs/data/visibility_wipp.csv", nrows=1)
+top = pd.read_csv("F:/project_web/spartan_fdrs/data/visibility_wipp.csv", nrows=1)
 headers = top.columns.values
 
-with open("F:/spartan_fdrs/data/visibility_wipp.csv", "r") as f, open("F:/spartan_fdrs/data/visibility/vis_last_wipp.csv","w") as g:
+with open("F:/project_web/spartan_fdrs/data/visibility_wipp.csv", "r") as f, open("F:/spartan_fdrs/data/visibility/vis_last_wipp.csv","w") as g:
     last_line = f.readlines()[-1].strip().split(",")
     c = csv.writer(g)
     c.writerow(headers)
     c.writerow(last_line)
 
-bottom = pd.read_csv("F:/spartan_fdrs/data/visibility/vis_last_wipp.csv")
+bottom = pd.read_csv("F:/project_web/spartan_fdrs/data/visibility/vis_last_wipp.csv")
 concatenated = pd.concat([bottom])
 concatenated.reset_index(inplace=True, drop=True)
 
@@ -342,14 +342,14 @@ print (concatenated)
 
 
 #Change to the Date
-df = pd.read_csv("F:/spartan_fdrs/data/visibility/vis_last_wipp.csv")
+df = pd.read_csv("F:/project_web/spartan_fdrs/data/visibility/vis_last_wipp.csv")
 date = []
 for d in df["Tanggal"]:
     d = d.replace('/', '-')
     date.append(d)
 df["Tanggal"] = date
 print (date)
-df.to_csv("F:/spartan_fdrs/data/visibility/vis_last_wipp.csv", index=False)
+df.to_csv("F:/project_web/spartan_fdrs/data/visibility/vis_last_wipp.csv", index=False)
 
 
 #Change to the ICAO
@@ -360,7 +360,7 @@ for d in df["ICAO"]:
     station.append(d)
 df["ICAO"] = station
 print (station)
-df.to_csv("F:/spartan_fdrs/data/visibility/vis_last_wipp.csv", index=False)
+df.to_csv("F:/project_web/spartan_fdrs/data/visibility/vis_last_wipp.csv", index=False)
 
 
 print("FINISH_PALEMBANG")
@@ -370,7 +370,7 @@ print("FINISH_PALEMBANG")
 import pandas as pd
 import glob
 
-path = r'F:/spartan_fdrs/data/visibility/' # use your path
+path = r'F:/project_web/spartan_fdrs/data/visibility/' # use your path
 all_files = glob.glob(path + "/*.csv")
 
 li = []
@@ -381,11 +381,11 @@ for filename in all_files:
 
 frame = pd.concat(li, axis=0, ignore_index=True)
 print (frame)
-frame.to_csv('F:/spartan_fdrs/data/visibility.csv')
+frame.to_csv('F:/project_web/spartan_fdrs/data/visibility.csv')
 
 # convert CSV to JSON 
-file = 'F:/spartan_fdrs/data/visibility.csv'
-json_file = 'F:/spartan_fdrs/data/visibility.json'
+file = 'F:/project_web/spartan_fdrs/data/visibility.csv'
+json_file = 'F:/project_web/spartan_fdrs/data/visibility.json'
 fieldnames = ("Tanggal", "Waktu", "ICAO", "Angin", "Visibility", "Cuaca")
 
         

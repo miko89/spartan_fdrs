@@ -8,6 +8,7 @@ set "MM=%result:~4,2%"
 set "DD=%result:~6,2%"
 
 F:
+cd project_web
 cd spartan_fdrs
 cd data
 md titik_hotspot
@@ -17,10 +18,11 @@ cd %yyyy%%mm%%dd%
 mkdir indonesia
 cd indonesia
 
-wget -q http://satelit.bmkg.go.id/IMAGE/HOTSPOT/Hotspot_Indonesia.txt -O /spartan_fdrs/data/titik_hotspot/%yyyy%%mm%%dd%/indonesia/hotspot_%yyyy%%mm%%dd%_indonesia.txt
+wget -q http://satelit.bmkg.go.id/IMAGE/HOTSPOT/Hotspot_Indonesia.txt -O /project_web/spartan_fdrs/data/titik_hotspot/%yyyy%%mm%%dd%/indonesia/hotspot_%yyyy%%mm%%dd%_indonesia.txt
 
 F:
-cd F:/spartan_fdrs/
-py -3 F:/spartan_fdrs/HOTSPOT_JSON_INDO.py
+cd F:/project_web/spartan_fdrs/
+py -3 F:/project_web/spartan_fdrs/HOTSPOT_JSON_INDO.py
 
 pause
+
