@@ -33,7 +33,7 @@ print(df.head)
 
 
 
-file = 'F:/project_web/data/htsp.csv'
+file = 'F:/project_web/spartan_fdrs/data/htsp.csv'
 json_file = 'F:/project_web/spartan_fdrs/data/htsp.json'
 fieldnames = ("Bujur", "Lintang", "Kepercayaan", "Region", "Provinsi", "Kabupaten", "Kecamatan", "Satelit", "Tanggal", "Waktu", "Radius", "Type")
 
